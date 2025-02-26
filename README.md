@@ -24,7 +24,7 @@ pixi run hyperfine -M 3 -L dataset dataset_0,dataset_1 -n dataset_0 -n dataset_1
 ### Run time and memory benchmark
 ```bash
 rm -r .duct # remove previous logs
-pixi run duct_benchmark # create duct logs by calling duct on each benchmark sample
+pixi run test_benchmark # create duct logs by calling duct on each benchmark sample
 pixi run python postprocess.py # creates a summary.csv from the duct logs
 ```
 
