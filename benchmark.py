@@ -18,11 +18,9 @@ def run_on_dataset(sdata):
 if __name__ == "__main__":
     import argparse
 
-    import memray
-
     # get path from argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("dataset", help="Path to dataset")
+    parser.add_argument("--dataset", help="Path to dataset")
     args = parser.parse_args()
     d = Path(args.dataset).resolve()
     # p_profile: Path = Path(args.profile).resolve()

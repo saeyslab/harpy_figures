@@ -23,6 +23,7 @@ ipython = "*"
 
 [feature.harpy.tasks]
 prep_datasets = "python prep_datasets.py"
+benchmark = "python run_duct_benchmark.py"
 test_benchmark = "python run_duct_test_benchmark.py"
 
 [feature.harpy.dependencies]
