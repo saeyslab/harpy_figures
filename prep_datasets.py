@@ -4,9 +4,6 @@ import loguru
 
 logger = loguru.logger
 
-def get_root():
-    return Path(__file__).resolve()
-
 def create_dataset(p: Path, **kwargs):
     import harpy
 
@@ -16,10 +13,14 @@ def create_dataset(p: Path, **kwargs):
     sdata.write(p)
 
 if __name__ == "__main__":
-    root = get_root()
+    root = Path(__file__).resolve().parent
     p_data = root / "data"
     logger.info(f"Creating datasets in {p_data}")
-    p_data.mkdir(exist_ok=True)
+    if p_data.exists():
+        logger.info(f"Removing existing datasets in {p_data}")
+        import shutil
+        shutil.rmtree(p_data)
+    p_data.mkdir()
 
     # create a harpy
     for i in range(3):

@@ -11,6 +11,9 @@ numpy = ">=1.26.4,<2"
 matplotlib = ">=3,<4"
 loguru = ">=0.7.2,<0.8"
 memray = ">=1.15.0,<2"
+hyperfine = ">=1.19.0,<2"
+ipykernel = ">=6.29.5,<7"
+seaborn = ">=0.13.2,<0.14"
 
 [environments]
 all = ["harpy", "dev"]
@@ -20,6 +23,7 @@ ipython = "*"
 
 [feature.harpy.tasks]
 prep_datasets = "python prep_datasets.py"
+test_benchmark = "python run_duct_test_benchmark.py"
 
 [feature.harpy.dependencies]
 scipy = ">=1.14.1,<2"
