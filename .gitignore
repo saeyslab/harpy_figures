@@ -1,0 +1,7 @@
+data/
+profiles/
+.duct/
+
+# pixi environments
+.pixi
+*.egg-info
