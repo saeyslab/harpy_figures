@@ -11,7 +11,7 @@ pixi i -e all
 
 ### Prep datasets
 ```bash
-pixi run prep_datasets
+pixi run -e harpy prep_datasets
 ```
 
 ### Run time benchmark

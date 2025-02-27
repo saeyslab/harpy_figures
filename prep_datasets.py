@@ -9,6 +9,7 @@ def create_dataset(p: Path, **kwargs):
 
     # create a dataset
     sdata = harpy.datasets.cluster_blobs(**kwargs)
+    sdata['blobs_image'] = sdata['blobs_image'].astype('uint8')
     logger.info(f"Created dataset {sdata}")
     sdata.write(p)
 
@@ -22,10 +23,7 @@ if __name__ == "__main__":
         shutil.rmtree(p_data)
     p_data.mkdir()
 
-    # create a harpy
-    for i in range(3):
-        p = p_data / f"dataset_{i}.zarr"
-        size = 100*(i+1)
+    for size in [100, 200, 300, 400, 500, 1000, 10_000, 20_000]:
+        p = p_data / f"dataset_{size}.zarr"
         logger.info(f"Creating dataset {p} with size {size}")
-        create_dataset(p, shape=(size, size), n_cells=10**i, n_cell_types=10)
-        
+        create_dataset(p, shape=(size, size), n_cells=size//10, n_cell_types=10)

@@ -1,7 +1,8 @@
 **/__pycache__/**
 data/
 profiles/
-.duct/
+.duct*/
+**.gzip
 
 # pixi environments
 .pixi

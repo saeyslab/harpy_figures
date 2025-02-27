@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import pandas as pd
 
@@ -14,15 +15,18 @@ def extend_summary(summary):
     for arg in command.split():
         if arg.startswith("--"):
             key, value = arg.split("=")
-            params[f'config_{key[2:]}'] = value
+            params[key[2:]] = value
+    dataset = params.get('dataset')
+    if dataset is None:
+        raise ValueError(f"Dataset not found in {params}")
+    print(dataset)
+    params['dataset_size'] = int(Path(dataset).stem.split('_')[-1])
     print(params)
     return {**summary, **params}
 
 
 if __name__ == "__main__":
     import argparse
-    import importlib.util
-    import sys
     from pathlib import Path
 
     parser = argparse.ArgumentParser()
@@ -36,6 +40,10 @@ if __name__ == "__main__":
     # read json logs and extract print all keys
     rows = []
     for log in logs:
+        print(f"Processing {log}")
+        if log.read_text() == "":
+            print(f"Skipping {log}")
+            continue
         with open(log, "r") as f:
             data = json.load(f)
             summary = data['execution_summary']

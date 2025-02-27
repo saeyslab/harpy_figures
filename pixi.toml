@@ -15,16 +15,21 @@ hyperfine = ">=1.19.0,<2"
 ipykernel = ">=6.29.5,<7"
 seaborn = ">=0.13.2,<0.14"
 
-[environments]
-all = ["harpy", "dev"]
+[pypi-dependencies]
+con-duct = { version = ">=0.10.1, <0.11", extras = ["all"] }
 
-[feature.dev.dependencies]
-ipython = "*"
-
-[feature.harpy.tasks]
+[tasks]
 prep_datasets = "python prep_datasets.py"
 benchmark = "python run_duct_benchmark.py"
 test_benchmark = "python run_duct_test_benchmark.py"
+
+[environments]
+harpy = ["harpy"]
+sopa = ["sopa"]
+
+
+[feature.sopa.pypi-dependencies]
+sopa = { version = '*', extras=['cellpose']}
 
 [feature.harpy.dependencies]
 scipy = ">=1.14.1,<2"
@@ -44,7 +49,3 @@ spatialdata = ">=0.2.6"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 spatialdata_io = "==0.1.6"
 harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "b7d1c04" }
-
-[pypi-dependencies]
-con-duct = { version = ">=0.10.1, <0.11", extras = ["all"] }
-
