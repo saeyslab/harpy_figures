@@ -16,6 +16,7 @@ def create_multi_channel_dataset(
     y_dim: int = 10000,
     x_dim: int = 10000,
     chunksize: int = 4096,
+    img_layer: str = "image_tiled",
 ):
     # Generate the example spatial data
     sdata = hp.datasets.vectra_example()
@@ -36,7 +37,9 @@ def create_multi_channel_dataset(
 
     tiled = tiled[:c_dim, :y_dim, :x_dim].rechunk((c_dim, chunksize, chunksize))
 
-    hp.im.add_image_layer(sdata, arr=tiled, output_layer="image_tiled", overwrite=True)
+    hp.im.add_image_layer(sdata, arr=tiled, output_layer=img_layer, overwrite=True)
+
+    return sdata
 
 
 if __name__ == "__main__":
