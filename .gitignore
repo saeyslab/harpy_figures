@@ -7,3 +7,5 @@ profiles/
 # pixi environments
 .pixi
 *.egg-info
+.vscode
+notebooks
