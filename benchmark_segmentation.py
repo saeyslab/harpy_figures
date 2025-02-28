@@ -139,19 +139,19 @@ if __name__ == "__main__":
         "--c_dim",
         type=int,
         default=10,
-        help="The target number of channels (first axis). Default is 10. Ignored if dataset already exists.",
+        help="The target number of channels (first axis). Default is 10.",
     )
     parser.add_argument(
         "--y_dim",
         type=int,
         default=10000,
-        help="The target size along the y-axis (second axis). Default is 10000. Ignored if dataset already exists.",
+        help="The target size along the y-axis (second axis). Default is 10000.",
     )
     parser.add_argument(
         "--x_dim",
         type=int,
         default=10000,
-        help="The target size along the x-axis (third axis). Default is 10000. Ignored if dataset already exists.",
+        help="The target size along the x-axis (third axis). Default is 10000.",
     )
     parser.add_argument(
         "--chunksize",
