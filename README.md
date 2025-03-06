@@ -4,14 +4,17 @@
 This benchmark is Linux only. Install [Pixi](https://pixi.sh/latest/).
 
 ```
-pixi i -e all
+pixi i -e harpy
 ```
+
+## Activate environment
+pixi shell -e harpy
 
 ## Usage
 
 ### Prep datasets
 ```bash
-pixi run -e harpy prep_datasets
+pixi run -e harpy python prep_datasets.py
 ```
 
 ### Run time benchmark
