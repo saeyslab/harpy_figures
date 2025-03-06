@@ -113,12 +113,6 @@ if __name__ == "__main__":
         help="Path to dataset.",
     )
     parser.add_argument(
-        "--chunksize",
-        type=int,
-        default=4096,
-        help="Chunksize in y and x. Chunksize in c is 1.",
-    )
-    parser.add_argument(
         "--img_layer",
         type=str,
         default="image_tiled",
@@ -148,7 +142,6 @@ if __name__ == "__main__":
             labels_layer=args.labels_layer,
             workers=args.workers,
             threads=args.threads,
-            chunksize=args.chunksize,
         )
     if args.method == "xr_spatial":
         xr_spatial_aggregation(
