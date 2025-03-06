@@ -18,7 +18,6 @@ def harpy_aggregation(
     labels_layer: str,
     workers: int | None = None,
     threads: int | None = None,
-    chunksize: int = 4096,
 ):
     from dask.distributed import Client, LocalCluster
     from harpy.utils._aggregate import RasterAggregator
@@ -40,33 +39,14 @@ def harpy_aggregation(
 
     logger.info("Start aggregation.")
 
-    name = f"sdata_{uuid.uuid4()}.zarr"
-    sdata_temp_path = os.path.join(os.path.dirname(sdata.path), name)
-    sdata_temp = sd.SpatialData()
-    sdata_temp.write(sdata_temp_path)
-    sdata_temp = sd.read_zarr(sdata_temp.path)
-
-    hp.im.add_image_layer(
-        sdata_temp,
-        arr=sdata[img_layer].data.rechunk((1, chunksize, chunksize)),
-        output_layer=img_layer,
-    )
-
-    hp.im.add_labels_layer(
-        sdata_temp,
-        arr=sdata[labels_layer].data.rechunk((chunksize, chunksize)),
-        output_layer=labels_layer,
-    )
-
-    image = sdata_temp[img_layer].data[:, None, ...]  # ( "c", "z", "y", "x" )
-    labels = sdata_temp[labels_layer].data[None, ...]  # ( "z", "y", "x" )
+    image = sdata[img_layer].data[:, None, ...]  # ( "c", "z", "y", "x" )
+    labels = sdata[labels_layer].data[None, ...]  # ( "z", "y", "x" )
 
     aggregator = RasterAggregator(image_dask_array=image, mask_dask_array=labels)
     dfs = aggregator.aggregate_stats(stats_funcs=("mean"))
     logger.info(
         f"Aggregation done, obtained dataframe with mean intensities of shape {dfs[0].shape}"
     )
-    shutil.rmtree(sdata_temp_path)
 
 
 def xr_spatial_aggregation(
