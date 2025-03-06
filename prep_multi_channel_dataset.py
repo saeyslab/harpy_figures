@@ -16,6 +16,7 @@ def create_multi_channel_dataset(
     y_dim: int = 10000,
     x_dim: int = 10000,
     chunksize: int = 4096,
+    c_chunksize: int | None = None,
     img_layer: str = "image_tiled",
 ):
     # Generate the example spatial data
@@ -35,7 +36,9 @@ def create_multi_channel_dataset(
     # Tile the array
     tiled = da.tile(sdata["image"].data, (repeat_z, repeat_y, repeat_x))
 
-    tiled = tiled[:c_dim, :y_dim, :x_dim].rechunk((c_dim, chunksize, chunksize))
+    tiled = tiled[:c_dim, :y_dim, :x_dim].rechunk(
+        (c_dim if c_chunksize is None else c_chunksize, chunksize, chunksize)
+    )
 
     hp.im.add_image_layer(sdata, arr=tiled, output_layer=img_layer, overwrite=True)
 
