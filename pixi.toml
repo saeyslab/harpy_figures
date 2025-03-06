@@ -6,7 +6,7 @@ platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [dependencies]
-python = "<3.13"
+python = "<3.12"
 numpy = ">=1.26.4,<2"
 matplotlib = ">=3,<4"
 loguru = ">=0.7.2,<0.8"
@@ -48,4 +48,5 @@ anndata = ">=0.9.1,<=0.10.8"
 spatialdata = ">=0.2.6"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 spatialdata_io = "==0.1.6"
-harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "b7d1c04" }
+harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "bf3692c" }
+

@@ -9,3 +9,4 @@ profiles/
 *.egg-info
 .vscode
 notebooks
+hpc_scripts
