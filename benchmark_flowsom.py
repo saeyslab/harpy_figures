@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import flowsom as fs
 import harpy as hp
 import loguru
 import spatialdata as sd
@@ -14,6 +15,7 @@ def harpy_flowsom(
     img_layer: str,
     workers: int | None = None,
     threads: int | None = None,
+    memory_limit: int | None = None,
     local_directory: str
     | Path
     | None = "/kyukon/scratch/gent/vo/001/gvo00163/vsc40523/dask_temp",
@@ -26,7 +28,7 @@ def harpy_flowsom(
             n_workers=workers,
             threads_per_worker=threads,
             local_directory=local_directory,
-            memory_limit="500GB",  # prevent spilling to disk
+            memory_limit=f"{memory_limit}GB",  # prevent spilling to disk
         )
 
         client = Client(cluster)
@@ -45,6 +47,35 @@ def harpy_flowsom(
         persist_intermediate=False,
         overwrite=True,
     )
+
+    batch_model = fs.models.BatchFlowSOMEstimator
+
+    logger.info("Start flowsom pixel clustering.")
+
+    sdata, fsom, mapping = hp.im.flowsom(
+        sdata,
+        img_layer=[img_layer],
+        output_layer_clusters=[
+            f"{img_layer}_fov0_flowsom_clusters",
+        ],  # we need output_cluster_layer and output_meta_cluster_layer --> these will both be labels layers
+        output_layer_metaclusters=[
+            f"{img_layer}_fov0_flowsom_metaclusters",
+        ],
+        n_clusters=20,  # 40
+        random_state=112,
+        chunks=512,
+        client=client,
+        model=batch_model,
+        num_batches=workers,
+        xdim=10,  # 12
+        ydim=10,  # 12
+        z_score=True,
+        z_cap=3,
+        persist_intermediate=False,
+        overwrite=True,
+    )
+
+    logger.info("End flowsom pixel clustering.")
 
     # hp.im.flowsom()
 
@@ -102,6 +133,9 @@ if __name__ == "__main__":
     parser.add_argument("--threads", help="Threads per worker", default=None, type=int)
     parser.add_argument("--workers", help="Workers to use", default=None, type=int)
     parser.add_argument(
+        "--memory_limit", help="memory limit per worker in GB", default=None, type=int
+    )
+    parser.add_argument(
         "--local_directory",
         type=str,
         default="/kyukon/scratch/gent/vo/001/gvo00163/vsc40523/dask_temp",
@@ -133,4 +167,5 @@ if __name__ == "__main__":
         workers=args.workers,
         threads=args.threads,
         local_directory=args.local_directory,
+        memory_limit=args.memory_limit,
     )
