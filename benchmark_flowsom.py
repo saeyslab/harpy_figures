@@ -28,7 +28,7 @@ def harpy_flowsom(
             n_workers=workers,
             threads_per_worker=threads,
             local_directory=local_directory,
-            memory_limit=f"{memory_limit}GB",  # prevent spilling to disk
+            memory_limit=f"{memory_limit}GB" if memory_limit is not None else None,
         )
 
         client = Client(cluster)
