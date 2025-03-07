@@ -48,6 +48,8 @@ def harpy_flowsom(
         overwrite=True,
     )
 
+    logger.info("End preprocessing FlowSOM clustering.")
+
     batch_model = fs.models.BatchFlowSOMEstimator
 
     logger.info("Start flowsom pixel clustering.")
@@ -76,10 +78,6 @@ def harpy_flowsom(
     )
 
     logger.info("End flowsom pixel clustering.")
-
-    # hp.im.flowsom()
-
-    logger.info("End preprocessing FlowSOM clustering.")
 
 
 def zarr_file(value):
