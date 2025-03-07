@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import flowsom as fs
 import harpy as hp
 import loguru
 import spatialdata as sd
@@ -10,7 +9,7 @@ from prep_multi_channel_dataset import create_multi_channel_dataset
 logger = loguru.logger
 
 
-def harpy_flowsom(
+def harpy_preprocess_flowsom(
     sdata: sd.SpatialData,
     img_layer: str,
     workers: int | None = None,
@@ -42,34 +41,19 @@ def harpy_flowsom(
             "Workers or threads not specified, running preprocessing without a client."
         )
 
-    batch_model = fs.models.BatchFlowSOMEstimator
+    logger.info("Start preprocessing FlowSOM clustering.")
 
-    logger.info("Start flowsom pixel clustering.")
-
-    sdata, fsom, mapping = hp.im.flowsom(
+    sdata = hp.im.pixel_clustering_preprocess(
         sdata,
-        img_layer=[img_layer],
-        output_layer_clusters=[
-            f"{img_layer}_fov0_flowsom_clusters",
-        ],  # we need output_cluster_layer and output_meta_cluster_layer --> these will both be labels layers
-        output_layer_metaclusters=[
-            f"{img_layer}_fov0_flowsom_metaclusters",
-        ],
-        n_clusters=20,  # 40
-        random_state=112,
-        chunks=512,
-        client=client,
-        model=batch_model,
-        num_batches=workers,
-        xdim=10,  # 12
-        ydim=10,  # 12
-        z_score=True,
-        z_cap=3,
+        img_layer=img_layer,
+        output_layer=f"{img_layer}_preprocessed",
         persist_intermediate=False,
         overwrite=True,
     )
 
-    logger.info("End flowsom pixel clustering.")
+    client.close()
+
+    logger.info("End preprocessing FlowSOM clustering.")
 
 
 def zarr_file(value):
@@ -151,7 +135,7 @@ if __name__ == "__main__":
             "please specify a different path or remove the existing dataset."
         )
 
-    harpy_flowsom(
+    harpy_preprocess_flowsom(
         sdata,
         img_layer=args.img_layer,
         workers=args.workers,
