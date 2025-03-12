@@ -15,6 +15,7 @@ def harpy_flowsom(
     img_layer: str,
     workers: int | None = None,
     threads: int | None = None,
+    batches_flowsom: int = 1,
     memory_limit: int | None = None,
     local_directory: str
     | Path
@@ -39,8 +40,9 @@ def harpy_flowsom(
         logger.info(client.dashboard_link)
     else:
         logger.info(
-            "Workers or threads not specified, running preprocessing without a client."
+            "Workers or threads not specified, running flowsom clustering without a client."
         )
+        client = None
 
     batch_model = fs.models.BatchFlowSOMEstimator
 
@@ -57,10 +59,11 @@ def harpy_flowsom(
         ],
         n_clusters=20,  # 40
         random_state=112,
+        fraction=0.05,
         chunks=512,
         client=client,
         model=batch_model,
-        num_batches=workers,
+        num_batches=batches_flowsom,
         xdim=10,  # 12
         ydim=10,  # 12
         z_score=True,
@@ -121,6 +124,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--method", help="Method to use", default="harpy")
     parser.add_argument("--threads", help="Threads per worker", default=None, type=int)
+    parser.add_argument("--batches_flowsom", help="batches flowsom", default=1, type=int)
     parser.add_argument("--workers", help="Workers to use", default=None, type=int)
     parser.add_argument(
         "--memory_limit", help="memory limit per worker in GB", default=None, type=int
@@ -156,6 +160,7 @@ if __name__ == "__main__":
         img_layer=args.img_layer,
         workers=args.workers,
         threads=args.threads,
+        batches_flowsom=args.batches_flowsom,
         local_directory=args.local_directory,
         memory_limit=args.memory_limit,
     )

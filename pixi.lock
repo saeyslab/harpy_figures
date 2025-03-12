@@ -807,17 +807,20 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c9/7a/cef76fd8438a42f96db64ddaa85280485a9c395e7df3db8158cfec1eee34/dill-0.3.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d5/7c/e9fcff7623954d86bdc17782036cbf715ecab1bec4847c008557affe1ca8/docstring_parser-0.16-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/bf/fd60001b3abc5222d8eaa4a204cd8c0ae78e75adc688f33ce4bf25b7fafa/fasteners-0.19-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/57/3b/75fd3227f1c4dded24f228906428aac384c0917028cc0ec325e2855418e0/FlowIO-1.3.0.tar.gz
+      - pypi: https://files.pythonhosted.org/packages/1e/10/bfdc8e5b35896d8134a9637ce51c6686f60d8a10fe511de2e07accb8b407/fcsparser-0.2.8-py3-none-any.whl
+      - pypi: git+https://github.com/saeyslab/FlowSOM_Python.git?rev=2e6b68c#2e6b68ce85891c0b1bc24ebe7d27fecdc8048922
       - pypi: https://files.pythonhosted.org/packages/b8/5f/c10123e8d64867bc9b4f2f510a32042a306ff5fcd7e2e09e5ae5100ee333/frozenlist-1.5.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/03/71/c99f662d4832c8835453cf3476f95daa28372023bda4aa1fca9e97c24f09/h5py-3.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: git+https://github.com/saeyslab/harpy.git?rev=bf3692c#bf3692ca31bc9306f70d0879350f899b25d4d9f7
+      - pypi: git+https://github.com/saeyslab/harpy.git?rev=c46c5cb#c46c5cb21e1ce0064f0c138dbe6a8781af1362ad
       - pypi: https://files.pythonhosted.org/packages/ae/05/75b90de9093de0aadafc868bb2fa7c57651fd8f45384adf39bd77f63980d/huggingface_hub-0.29.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/90/61/ec7edb5233ec2dc3d2129d94211801fb46a1c2b9beec40989707c82271f7/igraph-0.11.8-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/69/4a/4f9dbeb84e8850557c02365a0eee0649abe5eb1d84af92a25731c6c0f922/jsonschema-4.23.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/0f/8910b19ac0670a0f80ce1008e5e751c4a57e14d2c4c13a482aa6079fa9d6/jsonschema_specifications-2024.10.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/0b/61/b12f322cbbfa4c7ccf32b79872b20db814b0b8028f6a26ea0e87a13e8512/lamin_utils-0.13.11-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3c/1d/9324c70629dfe4395f9122ab331cf245d3cce6ded851aa8a0a8ae264c4e6/legacy_api_wrap-1.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/48/bb/28343e7f26cbacf355c754ef6be2f1efa8d6233b56a5be89c5bc8caca1d1/leidenalg-0.10.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b6/42/7e4f03201dfc10b4a8d4d94d183c878d7d0d4f2eee173e95294c71828014/magicgui-0.10.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/4e/16/15ab8062940291b7ee18cca0a3ad328b1463724ce3989a3d48979c1cd856/mudata-0.2.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ba/af/73d13b918071ff9b2205fcf773d316e0f8fefb4ec65354bbcf0b10908cc6/multidict-6.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/51/c0/00c9809d8b9346eb238a6bbd5f83e846a4ce4503da94a4c08cb7284c325b/multipledispatch-1.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/50/15/b56e50e8debaf439f44befec5b2af11db85f6e0f344c3113ae0be0593a91/multiprocess-0.70.16-py311-none-any.whl
@@ -836,7 +839,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/46/bb/cf48ce5ba1481d568c5fb2b74ecc55e64207a7ee6444a3d0cb04f0410020/pyout-0.8.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1c/6f/ed601aec632d908b86adbad0e1cc712f7073faf697134fb0465a3fbcc512/pyrootutils-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/88/4b/70476e3c3aedb56af3379f04f05e09693bfbc16fc37f330998ec016c218f/readfcs-2.0.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b0/3d/7982470f83e565cc5c44f9717222c477f027725734bc782474ceaa778469/readfcs-1.1.8-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c1/b1/3baf80dc6d2b7bc27a95a67752d0208e410351e3feb4eb78de5f77454d8d/referencing-0.36.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5f/a7/e94cdb73411ae9c11414d3c7c9a6ad75d22ad4a8d094fb45a345ba9e3018/rpds_py-0.23.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/b4/c408bac643afd670d2009219dbbb2076290e23fb1986937825c9a0d839c5/scanpy-1.10.4-py3-none-any.whl
@@ -1223,17 +1226,20 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c9/7a/cef76fd8438a42f96db64ddaa85280485a9c395e7df3db8158cfec1eee34/dill-0.3.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d5/7c/e9fcff7623954d86bdc17782036cbf715ecab1bec4847c008557affe1ca8/docstring_parser-0.16-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/bf/fd60001b3abc5222d8eaa4a204cd8c0ae78e75adc688f33ce4bf25b7fafa/fasteners-0.19-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/57/3b/75fd3227f1c4dded24f228906428aac384c0917028cc0ec325e2855418e0/FlowIO-1.3.0.tar.gz
+      - pypi: https://files.pythonhosted.org/packages/1e/10/bfdc8e5b35896d8134a9637ce51c6686f60d8a10fe511de2e07accb8b407/fcsparser-0.2.8-py3-none-any.whl
+      - pypi: git+https://github.com/saeyslab/FlowSOM_Python.git?rev=2e6b68c#2e6b68ce85891c0b1bc24ebe7d27fecdc8048922
       - pypi: https://files.pythonhosted.org/packages/2c/31/ab01375682f14f7613a1ade30149f684c84f9b8823a4391ed950c8285656/frozenlist-1.5.0-cp311-cp311-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/94/59/36d87a559cab9c59b59088d52e86008d27a9602ce3afc9d3b51823014bf3/h5py-3.13.0-cp311-cp311-macosx_11_0_arm64.whl
-      - pypi: git+https://github.com/saeyslab/harpy.git?rev=bf3692c#bf3692ca31bc9306f70d0879350f899b25d4d9f7
+      - pypi: git+https://github.com/saeyslab/harpy.git?rev=c46c5cb#c46c5cb21e1ce0064f0c138dbe6a8781af1362ad
       - pypi: https://files.pythonhosted.org/packages/ae/05/75b90de9093de0aadafc868bb2fa7c57651fd8f45384adf39bd77f63980d/huggingface_hub-0.29.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dd/7e/8ee4e8f03b03feca33bb9dcc730724353ac36cbe7da7b38397f8ae5cd58b/igraph-0.11.8-cp39-abi3-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/69/4a/4f9dbeb84e8850557c02365a0eee0649abe5eb1d84af92a25731c6c0f922/jsonschema-4.23.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/0f/8910b19ac0670a0f80ce1008e5e751c4a57e14d2c4c13a482aa6079fa9d6/jsonschema_specifications-2024.10.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/0b/61/b12f322cbbfa4c7ccf32b79872b20db814b0b8028f6a26ea0e87a13e8512/lamin_utils-0.13.11-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3c/1d/9324c70629dfe4395f9122ab331cf245d3cce6ded851aa8a0a8ae264c4e6/legacy_api_wrap-1.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/82/90/0b9525098a7458939f5c2b956ffdc1fed460c0fe706f549087c3b0d12b81/leidenalg-0.10.2-cp38-abi3-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/b6/42/7e4f03201dfc10b4a8d4d94d183c878d7d0d4f2eee173e95294c71828014/magicgui-0.10.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/4e/16/15ab8062940291b7ee18cca0a3ad328b1463724ce3989a3d48979c1cd856/mudata-0.2.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/70/0f/6dc70ddf5d442702ed74f298d69977f904960b82368532c88e854b79f72b/multidict-6.1.0-cp311-cp311-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/51/c0/00c9809d8b9346eb238a6bbd5f83e846a4ce4503da94a4c08cb7284c325b/multipledispatch-1.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/50/15/b56e50e8debaf439f44befec5b2af11db85f6e0f344c3113ae0be0593a91/multiprocess-0.70.16-py311-none-any.whl
@@ -1252,7 +1258,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/46/bb/cf48ce5ba1481d568c5fb2b74ecc55e64207a7ee6444a3d0cb04f0410020/pyout-0.8.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1c/6f/ed601aec632d908b86adbad0e1cc712f7073faf697134fb0465a3fbcc512/pyrootutils-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/88/4b/70476e3c3aedb56af3379f04f05e09693bfbc16fc37f330998ec016c218f/readfcs-2.0.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b0/3d/7982470f83e565cc5c44f9717222c477f027725734bc782474ceaa778469/readfcs-1.1.8-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c1/b1/3baf80dc6d2b7bc27a95a67752d0208e410351e3feb4eb78de5f77454d8d/referencing-0.36.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a7/0a/3dedb2daee8e783622427f5064e2d112751d8276ee73aa5409f000a132f4/rpds_py-0.23.1-cp311-cp311-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/d1/b4/c408bac643afd670d2009219dbbb2076290e23fb1986937825c9a0d839c5/scanpy-1.10.4-py3-none-any.whl
@@ -2873,8 +2879,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - libbrotlicommon 1.1.0 hb9d3cd8_2
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -2892,8 +2896,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - libbrotlicommon 1.1.0 hd74edd7_2
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -3158,8 +3160,6 @@ packages:
   - pycparser
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -3176,8 +3176,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -3353,8 +3351,6 @@ packages:
   - numpy >=1.23
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -3371,8 +3367,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -3434,8 +3428,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - toolz >=0.10.0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -3451,8 +3443,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - toolz >=0.10.0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -3804,8 +3794,6 @@ packages:
   - libstdcxx >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -3821,8 +3809,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -4019,8 +4005,6 @@ packages:
   - numpy >=1.23.5,<2.0a0
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: LGPL-3.0-only
   license_family: LGPL
   purls:
@@ -4036,14 +4020,20 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: LGPL-3.0-only
   license_family: LGPL
   purls:
   - pkg:pypi/fastremap?source=hash-mapping
   size: 450047
   timestamp: 1695824019506
+- pypi: https://files.pythonhosted.org/packages/1e/10/bfdc8e5b35896d8134a9637ce51c6686f60d8a10fe511de2e07accb8b407/fcsparser-0.2.8-py3-none-any.whl
+  name: fcsparser
+  version: 0.2.8
+  sha256: 833b02ceff18f34c9304681f5b6675039f5b39a31dfdd9640881f43223bcc2ab
+  requires_dist:
+  - numpy>=1,<2
+  - pandas>=1.5.3
+  requires_python: '>=3.8.0,<4.0.0'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/ffmpeg-7.1.0-gpl_ha1cb39d_715.conda
   sha256: 6effcce8adc5b1d9a22e021c3121eaa6b6fbe93467956765dbebd0f6f5839469
   md5: 18046f211e7aaeae13430827b7a8d692
@@ -4183,6 +4173,40 @@ packages:
   sha256: cf72b317a0433dca4ce7de6dd76a1f58db27a61ca2021f554ba4014b3149d00b
   requires_dist:
   - numpy>=1.17 ; extra == 'test'
+- pypi: git+https://github.com/saeyslab/FlowSOM_Python.git?rev=2e6b68c#2e6b68ce85891c0b1bc24ebe7d27fecdc8048922
+  name: flowsom
+  version: 0.0.3
+  requires_dist:
+  - mudata<=0.2.4
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
+  - readfcs<2
+  - scikit-learn
+  - igraph
+  - session-info
+  - numba
+  - scanpy
+  - seaborn
+  - anndata<=0.10.8
+  - loguru
+  - pre-commit ; extra == 'dev'
+  - twine>=4.0.2 ; extra == 'dev'
+  - docutils>=0.8,!=0.18.*,!=0.19.* ; extra == 'doc'
+  - sphinx>=4 ; extra == 'doc'
+  - sphinx-book-theme>=1.0.0 ; extra == 'doc'
+  - myst-nb ; extra == 'doc'
+  - sphinxcontrib-bibtex>=1.0.0 ; extra == 'doc'
+  - sphinx-autodoc-typehints ; extra == 'doc'
+  - sphinxext-opengraph ; extra == 'doc'
+  - ipykernel ; extra == 'doc'
+  - ipython ; extra == 'doc'
+  - sphinx-copybutton ; extra == 'doc'
+  - pytometry>=0.1.5 ; extra == 'doc'
+  - pytest ; extra == 'test'
+  - coverage ; extra == 'test'
+  requires_python: '>=3.9'
 - conda: https://conda.anaconda.org/conda-forge/noarch/folium-0.19.4-pyhd8ed1ab_0.conda
   sha256: 5db2c83bf48c2f1ea758e17a68cfb2ec691ad4a9bc4b196058917461be24b313
   md5: 5373736fc7c86a9681319b9511cc3973
@@ -4293,8 +4317,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - unicodedata2 >=15.1.0
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -4312,8 +4334,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - unicodedata2 >=15.1.0
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -4794,8 +4814,6 @@ packages:
   - mpfr >=4.2.1,<5.0a0
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: LGPL-3.0-or-later
   license_family: LGPL
   purls:
@@ -4813,8 +4831,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: LGPL-3.0-or-later
   license_family: LGPL
   purls:
@@ -4922,7 +4938,7 @@ packages:
   purls: []
   size: 1378165
   timestamp: 1740155007314
-- pypi: git+https://github.com/saeyslab/harpy.git?rev=bf3692c#bf3692ca31bc9306f70d0879350f899b25d4d9f7
+- pypi: git+https://github.com/saeyslab/harpy.git?rev=c46c5cb#c46c5cb21e1ce0064f0c138dbe6a8781af1362ad
   name: harpy-analysis
   version: 0.0.2
   requires_dist:
@@ -5365,8 +5381,6 @@ packages:
   - zfp >=1.0.1,<2.0a0
   - zlib-ng >=2.2.3,<2.3.0a0
   - zstd >=1.5.6,<1.6.0a0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -5412,8 +5426,6 @@ packages:
   - zfp >=1.0.1,<2.0a0
   - zlib-ng >=2.2.3,<2.3.0a0
   - zstd >=1.5.6,<1.6.0a0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -5811,8 +5823,6 @@ packages:
   - libstdcxx >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -5828,8 +5838,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -5883,6 +5891,17 @@ packages:
   purls: []
   size: 528805
   timestamp: 1664996399305
+- pypi: https://files.pythonhosted.org/packages/0b/61/b12f322cbbfa4c7ccf32b79872b20db814b0b8028f6a26ea0e87a13e8512/lamin_utils-0.13.11-py2.py3-none-any.whl
+  name: lamin-utils
+  version: 0.13.11
+  sha256: 996a6b83fade606d9a60449470041da56edc5c8a7b0e42d74a5be1e888b8c2d4
+  requires_dist:
+  - pandas ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - nox ; extra == 'dev'
+  - pytest>=6.0 ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - nbproject-test ; extra == 'dev'
 - pypi: https://files.pythonhosted.org/packages/83/60/d497a310bde3f01cb805196ac61b7ad6dc5dcf8dce66634dc34364b20b4f/lazy_loader-0.4-py3-none-any.whl
   name: lazy-loader
   version: '0.4'
@@ -7762,8 +7781,6 @@ packages:
   - numpy >=1.19,<3
   - openexr >=3.3.2,<3.4.0a0
   - qt6-main >=6.8.2,<6.9.0a0
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -7812,8 +7829,6 @@ packages:
   - numpy >=1.19,<3
   - openexr >=3.3.2,<3.4.0a0
   - python >=3.11,<3.12.0a0 *_cpython
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -8677,8 +8692,6 @@ packages:
   - pytorch 2.5.1 cpu_generic_*_13
   - pytorch-gpu ==99999999
   - openblas * openmp_*
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls: []
@@ -9083,8 +9096,6 @@ packages:
   - libzlib >=1.3.1,<2.0a0
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-2-Clause
   license_family: BSD
   purls:
@@ -9102,8 +9113,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-2-Clause
   license_family: BSD
   purls:
@@ -9132,8 +9141,6 @@ packages:
   depends:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -9147,8 +9154,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -9164,8 +9169,6 @@ packages:
   - lz4-c >=1.10.0,<1.11.0a0
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -9181,8 +9184,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -9326,8 +9327,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - jinja2 >=3.0.0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -9344,8 +9343,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - jinja2 >=3.0.0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -9361,8 +9358,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - tornado >=5
-  arch: x86_64
-  platform: linux
   license: PSF-2.0
   license_family: PSF
   purls: []
@@ -9376,8 +9371,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - tornado >=5
-  arch: arm64
-  platform: osx
   license: PSF-2.0
   license_family: PSF
   purls: []
@@ -9405,8 +9398,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - qhull >=2020.2,<2020.3.0a0
   - tk >=8.6.13,<8.7.0a0
-  arch: x86_64
-  platform: linux
   license: PSF-2.0
   license_family: PSF
   purls:
@@ -9434,8 +9425,6 @@ packages:
   - python-dateutil >=2.7
   - python_abi 3.11.* *_cp311
   - qhull >=2020.2,<2020.3.0a0
-  arch: arm64
-  platform: osx
   license: PSF-2.0
   license_family: PSF
   purls:
@@ -9492,8 +9481,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - rich >=11.2.0
   - textual >=0.34.0
-  arch: x86_64
-  platform: linux
   license: Apache-2.0 AND BSD-3-Clause
   purls:
   - pkg:pypi/memray?source=hash-mapping
@@ -9512,8 +9499,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - rich >=11.2.0
   - textual >=0.34.0
-  arch: arm64
-  platform: osx
   license: Apache-2.0 AND BSD-3-Clause
   purls:
   - pkg:pypi/memray?source=hash-mapping
@@ -9670,8 +9655,6 @@ packages:
   - libstdcxx >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -9687,14 +9670,30 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls:
   - pkg:pypi/msgpack?source=hash-mapping
   size: 91131
   timestamp: 1725975234150
+- pypi: https://files.pythonhosted.org/packages/4e/16/15ab8062940291b7ee18cca0a3ad328b1463724ce3989a3d48979c1cd856/mudata-0.2.4-py3-none-any.whl
+  name: mudata
+  version: 0.2.4
+  sha256: d4dd670d1470dbdb2a2c9d49df82862ee01e58ed01fa8184d495ce5b01aafef7
+  requires_dist:
+  - numpy
+  - pandas
+  - h5py
+  - anndata>=0.10.8
+  - sphinx ; extra == 'docs'
+  - sphinx-book-theme ; extra == 'docs'
+  - pydata-sphinx-theme ; extra == 'docs'
+  - readthedocs-sphinx-search ; extra == 'docs'
+  - nbsphinx ; extra == 'docs'
+  - sphinx-automodapi ; extra == 'docs'
+  - recommonmark ; extra == 'docs'
+  - zarr ; extra == 'test'
+  requires_python: '>=3.9'
 - pypi: https://files.pythonhosted.org/packages/70/0f/6dc70ddf5d442702ed74f298d69977f904960b82368532c88e854b79f72b/multidict-6.1.0-cp311-cp311-macosx_11_0_arm64.whl
   name: multidict
   version: 6.1.0
@@ -10015,8 +10014,6 @@ packages:
   - tbb >=2021.6.0
   - cuda-python >=11.6
   - scipy >=1.0
-  arch: x86_64
-  platform: linux
   license: BSD-2-Clause
   license_family: BSD
   purls:
@@ -10044,8 +10041,6 @@ packages:
   - tbb >=2021.6.0
   - cuda-version >=11.2
   - cuda-python >=11.6
-  arch: arm64
-  platform: osx
   license: BSD-2-Clause
   license_family: BSD
   purls:
@@ -10105,8 +10100,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - numpy-base <0a0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -10126,8 +10119,6 @@ packages:
   - python_abi 3.11.* *_cp311
   constrains:
   - numpy-base <0a0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -10312,8 +10303,6 @@ packages:
   - libprotobuf >=5.28.3,<5.28.4.0a0
   - py-opencv 4.11.0 qt6_py311h7f24cbc_602
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls: []
@@ -10328,8 +10317,6 @@ packages:
   - libprotobuf >=5.28.3,<5.28.4.0a0
   - py-opencv 4.11.0 headless_py311h3462cd2_2
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls: []
@@ -10590,8 +10577,6 @@ packages:
   - python-tzdata >=2022a
   - python_abi 3.11.* *_cp311
   - pytz >=2020.1,<2024.2
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -10612,8 +10597,6 @@ packages:
   - python-tzdata >=2022a
   - python_abi 3.11.* *_cp311
   - pytz >=2020.1,<2024.2
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -10830,8 +10813,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - tk >=8.6.13,<8.7.0a0
-  arch: x86_64
-  platform: linux
   license: HPND
   purls:
   - pkg:pypi/pillow?source=hash-mapping
@@ -10854,8 +10835,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - tk >=8.6.13,<8.7.0a0
-  arch: arm64
-  platform: osx
   license: HPND
   purls:
   - pkg:pypi/pillow?source=hash-mapping
@@ -11032,8 +11011,6 @@ packages:
   - libgcc >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -11048,8 +11025,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -11243,8 +11218,6 @@ packages:
   - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls: []
@@ -11260,8 +11233,6 @@ packages:
   - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls: []
@@ -11300,8 +11271,6 @@ packages:
   - pyarrow-core 19.0.1 *_0_*
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: APACHE
   purls: []
@@ -11318,8 +11287,6 @@ packages:
   - pyarrow-core 19.0.1 *_0_*
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: APACHE
   purls: []
@@ -11339,8 +11306,6 @@ packages:
   constrains:
   - apache-arrow-proc =*=cpu
   - numpy >=1.21,<3
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: APACHE
   purls:
@@ -11361,8 +11326,6 @@ packages:
   constrains:
   - numpy >=1.21,<3
   - apache-arrow-proc =*=cpu
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: APACHE
   purls:
@@ -11541,8 +11504,6 @@ packages:
   - packaging
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -11561,8 +11522,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -11612,8 +11571,6 @@ packages:
   - proj >=9.5.1,<9.6.0a0
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -11630,8 +11587,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -11677,8 +11632,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - qt6-main 6.8.2.*
   - qt6-main >=6.8.2,<6.9.0a0
-  arch: x86_64
-  platform: linux
   license: LGPL-3.0-only
   purls:
   - pkg:pypi/pyside6?source=hash-mapping
@@ -11721,8 +11674,6 @@ packages:
   - tzdata
   constrains:
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Python-2.0
   purls: []
   size: 30624804
@@ -11746,8 +11697,6 @@ packages:
   - tzdata
   constrains:
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Python-2.0
   purls: []
   size: 14647146
@@ -11788,8 +11737,6 @@ packages:
   md5: 139a8d40c8a2f430df31048949e450de
   constrains:
   - python 3.11.* *_cpython
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls: []
@@ -11801,8 +11748,6 @@ packages:
   md5: 3b855e3734344134cb56c410f729c340
   constrains:
   - python 3.11.* *_cpython
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls: []
@@ -11840,8 +11785,6 @@ packages:
   constrains:
   - pytorch-gpu ==99999999
   - pytorch-cpu ==2.5.1
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -11880,8 +11823,6 @@ packages:
   constrains:
   - pytorch-cpu ==2.5.1
   - pytorch-gpu ==99999999
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -11909,8 +11850,6 @@ packages:
   - numpy >=1.23,<3
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -11927,8 +11866,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -11954,8 +11891,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - yaml >=0.2.5,<0.3.0a0
-  arch: x86_64
-  platform: linux
   license: MIT
   license_family: MIT
   purls:
@@ -11971,8 +11906,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - yaml >=0.2.5,<0.3.0a0
-  arch: arm64
-  platform: osx
   license: MIT
   license_family: MIT
   purls:
@@ -11990,8 +11923,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - zeromq >=4.3.5,<4.4.0a0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12009,8 +11940,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - zeromq >=4.3.5,<4.4.0a0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12132,8 +12061,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - setuptools >=0.9.8
   - snuggs >=1.4.1
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12160,8 +12087,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - setuptools >=0.9.8
   - snuggs >=1.4.1
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12206,6 +12131,20 @@ packages:
   purls: []
   size: 26861
   timestamp: 1735541088455
+- pypi: https://files.pythonhosted.org/packages/b0/3d/7982470f83e565cc5c44f9717222c477f027725734bc782474ceaa778469/readfcs-1.1.8-py2.py3-none-any.whl
+  name: readfcs
+  version: 1.1.8
+  sha256: 8974e99f3dfc5b7504e04bb150b273417c4fcb09796abcb8f33710488ea2ea9e
+  requires_dist:
+  - lamin-utils
+  - fcsparser
+  - anndata
+  - pre-commit ; extra == 'dev'
+  - nox ; extra == 'dev'
+  - pytest>=6.0 ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - nbproject-test ; extra == 'dev'
+  - laminci ; extra == 'dev'
 - pypi: https://files.pythonhosted.org/packages/88/4b/70476e3c3aedb56af3379f04f05e09693bfbc16fc37f330998ec016c218f/readfcs-2.0.1-py2.py3-none-any.whl
   name: readfcs
   version: 2.0.1
@@ -12698,8 +12637,6 @@ packages:
   - toolz >=0.10.0
   - cloudpickle >=0.2.1
   - cytoolz >=0.11.0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12734,8 +12671,6 @@ packages:
   - astropy >=5.0
   - toolz >=0.10.0
   - matplotlib-base >=3.5
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12878,8 +12813,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - scipy
   - threadpoolctl >=3.1.0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12900,8 +12833,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - scipy
   - threadpoolctl >=3.1.0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12925,8 +12856,6 @@ packages:
   - numpy >=1.23.5
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -12950,8 +12879,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13194,8 +13121,6 @@ packages:
   - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13212,8 +13137,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13537,8 +13460,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
   - scipy !=1.9.2,>=1.8
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13559,8 +13480,6 @@ packages:
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
   - scipy !=1.9.2,>=1.8
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13893,8 +13812,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - libwebp-base >=1.5.0,<2.0a0
   - libheif >=1.19.5,<1.20.0a0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13922,8 +13839,6 @@ packages:
   - libtorch >=2.5.1,<2.6.0a0
   - pytorch >=2.5.1,<2.6.0a0
   - libtorch >=2.5.1,<2.6.0a0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -13938,8 +13853,6 @@ packages:
   - libgcc >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -13954,8 +13867,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -14096,8 +14007,6 @@ packages:
   - libgcc >=13
   - python >=3.11,<3.12.0a0
   - python_abi 3.11.* *_cp311
-  arch: x86_64
-  platform: linux
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -14112,8 +14021,6 @@ packages:
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python_abi 3.11.* *_cp311
-  arch: arm64
-  platform: osx
   license: Apache-2.0
   license_family: Apache
   purls:
@@ -14956,8 +14863,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - zstd >=1.5.6,<1.5.7.0a0
   - zstd >=1.5.6,<1.6.0a0
-  arch: x86_64
-  platform: linux
   license: BSD-3-Clause
   license_family: BSD
   purls:
@@ -14975,8 +14880,6 @@ packages:
   - python_abi 3.11.* *_cp311
   - zstd >=1.5.6,<1.5.7.0a0
   - zstd >=1.5.6,<1.6.0a0
-  arch: arm64
-  platform: osx
   license: BSD-3-Clause
   license_family: BSD
   purls:
