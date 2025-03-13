@@ -40,6 +40,7 @@ def harpy_preprocess_flowsom(
         logger.info(
             "Workers or threads not specified, running preprocessing without a client."
         )
+        client=None
 
     logger.info("Start preprocessing FlowSOM clustering.")
 
@@ -51,7 +52,8 @@ def harpy_preprocess_flowsom(
         overwrite=True,
     )
 
-    client.close()
+    if client is not None:
+        client.close()
 
     logger.info("End preprocessing FlowSOM clustering.")
 
@@ -112,7 +114,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--local_directory",
         type=str,
-        default="/kyukon/scratch/gent/vo/001/gvo00163/vsc40523/dask_temp",
+        default=None,
         help="Local directory where you want to spill to disk.",
     )
 

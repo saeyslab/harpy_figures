@@ -132,7 +132,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--local_directory",
         type=str,
-        default="/kyukon/scratch/gent/vo/001/gvo00163/vsc40523/dask_temp",
+        default=None,
         help="Local directory where you want to spill to disk.",
     )
 
