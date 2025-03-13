@@ -1,9 +1,9 @@
 #!/bin/bash
-C_DIM=10
+C_DIM=50
 CHUNKSIZE=2048
 DIM_VALUES=(20000)
 RAM_VALUES=(100)  # Memory in GB
-TIME_VALUES=(1)
+TIME_VALUES=(3)
 
 WORKERS_VALUES=(1 2 4 8)
 
@@ -34,10 +34,10 @@ C_DIM=${C_DIM}
 RAM_VALUES_PER_WORKER=${RAM_VALUES_PER_WORKER}
 CHUNKSIZE=${CHUNKSIZE}
 WORKERS=${WORKERS}
-METHOD="preprocess_flowsom_threads"
+METHOD="preprocess_flowsom"
 DATASET="\$VSC_DATA_VO_USER/VIB/DATA/benchmark_harpy/sdata_\${METHOD}_\${C_DIM}_\${DIM}_\${WORKERS}_\${CHUNKSIZE}.zarr"
 IMG_LAYER="image"
-LOG_DIR=".duct/logs_preprocess_flowsom_threads"
+LOG_DIR=".duct/logs_preprocess_flowsom"
 LOG_PREFIX="\${LOG_DIR}/\${METHOD}_\${C_DIM}_\${DIM}_\${WORKERS}_\${CHUNKSIZE}"
 
 mkdir -p "\$LOG_DIR"

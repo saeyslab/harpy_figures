@@ -1,5 +1,5 @@
 #!/bin/bash
-C_DIM=25
+C_DIM=50
 CHUNKSIZE=2048
 DIM_VALUES=(20000)
 RAM_VALUES=(100)  # Memory in GB
