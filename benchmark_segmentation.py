@@ -7,6 +7,8 @@ import spatialdata as sd
 
 from prep_multi_channel_dataset import create_multi_channel_dataset
 
+from numpy.typing import NDArray
+
 logger = loguru.logger
 
 
@@ -106,16 +108,77 @@ def instanseg_segment(
     sdata.write_element("labels_cells_instanseg")
 
 
-def sopa_segment(sdata, layer="blobs_image", channel="nucleus", jobs=None):
+def sopa_segment(
+    sdata,
+    chunksize: int,
+    img_layer: str,
+    workers: int,
+    threads: int,
+):
     import sopa
 
-    if jobs:
-        sopa.settings.parallelization_backend = "dask"
-        sopa.settings.dask_client_kwargs["n_workers"] = jobs
-    sopa.make_image_patches(sdata, image_key="blobs_image")
-    sopa.segmentation.cellpose(
-        sdata, channels=[channel], diameter=10, image_key="blobs_image"
+    sopa.settings.parallelization_backend = "dask"
+    sopa.settings.dask_client_kwargs["n_workers"] = workers
+    sopa.settings.dask_client_kwargs["threads_per_worker"] = threads
+
+    sopa.make_image_patches(
+        sdata,
+        patch_width=chunksize,
+        image_key=img_layer,
+        patch_overlap=50,
     )
+
+    output_layer = "shapes_sopa"
+    sopa.segmentation.custom_staining_based(
+        sdata,
+        instanseg_callable_sopa,
+        channels=sdata[img_layer].c.data.tolist(),
+        image_key=img_layer,
+        key_added=output_layer,
+    )
+
+    nr_of_shapes_found = len(sdata[output_layer])
+
+    logger.info(f"Found {nr_of_shapes_found} shapes.")
+
+
+def instanseg_callable_sopa(
+    img: NDArray,
+    device: str | None = "cpu",
+    dtype: type = np.uint32,
+    pixel_size: float = 0.5,
+    **kwargs,  # kwargs passed to .eval_small_image
+) -> NDArray:
+    # input is c,y,x
+    # output is y,x
+    from instanseg import InstanSeg
+    import torch
+
+    _ = InstanSeg("fluorescence_nuclei_and_cells", verbosity=1, device="cpu")
+
+    path_model = os.path.join(
+        os.environ.get("INSTANSEG_BIOIMAGEIO_PATH"),
+        "fluorescence_nuclei_and_cells/0.1.0/instanseg.pt",
+    )
+
+    instanseg_model = torch.load(path_model, weights_only=False)
+    instanseg_model = InstanSeg(model_type=instanseg_model, device=device)
+    logger.info(f"SHAPE {img.shape}")
+
+    labeled_output, _ = instanseg_model.eval_small_image(
+        img,
+        pixel_size=pixel_size,
+        resolve_cell_and_nucleus=True,
+        cleanup_fragments=True,
+        target="cells",
+        **kwargs,
+    )
+
+    # we want the c dimension to be the last dimension and the output to be in numpy format
+    labeled_output = labeled_output.permute([0, 2, 3, 1]).cpu().numpy().astype(dtype)
+    # already has a trivial z dimension (batch) at 0
+    # dimension 1 is (nucleus mask (0) and whole cell mask (1))
+    return labeled_output.squeeze()
 
 
 def zarr_file(value):
@@ -183,6 +246,9 @@ if __name__ == "__main__":
             x_dim=args.x_dim,
             chunksize=args.chunksize,
             img_layer=args.img_layer,
+            dtype=np.uint32
+            if args.method == "sopa"
+            else np.float32,  # sopa only accepts np.uint
         )
     else:
         raise FileExistsError(
@@ -208,6 +274,10 @@ if __name__ == "__main__":
             img_layer=args.img_layer,
         )
     if args.method == "sopa":
-        sopa_segment(sdata)
-    elif args.method == "sopa_dask":
-        sopa_segment(sdata, jobs=args.threads)
+        sopa_segment(
+            sdata,
+            chunksize=args.chunksize,
+            img_layer=args.img_layer,
+            workers=args.workers,
+            threads=args.threads,
+        )

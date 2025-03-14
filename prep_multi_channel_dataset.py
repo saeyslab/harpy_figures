@@ -8,6 +8,7 @@ from spatialdata import read_zarr
 
 import dask.array as da
 import math
+import numpy as np
 
 
 def create_multi_channel_dataset(
@@ -18,6 +19,7 @@ def create_multi_channel_dataset(
     chunksize: int = 4096,
     c_chunksize: int | None = None,
     img_layer: str = "image_tiled",
+    dtype: str = np.float32,  # sopa only accepts np.uint
 ):
     # Generate the example spatial data
     sdata = hp.datasets.vectra_example()
@@ -40,7 +42,9 @@ def create_multi_channel_dataset(
         (c_dim if c_chunksize is None else c_chunksize, chunksize, chunksize)
     )
 
-    hp.im.add_image_layer(sdata, arr=tiled, output_layer=img_layer, overwrite=True)
+    hp.im.add_image_layer(
+        sdata, arr=tiled.astype(dtype), output_layer=img_layer, overwrite=True
+    )
 
     return sdata
 
