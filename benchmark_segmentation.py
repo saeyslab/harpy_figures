@@ -139,7 +139,7 @@ def sopa_segment(
 
     nr_of_shapes_found = len(sdata[output_layer])
 
-    logger.info(f"Found {nr_of_shapes_found} shapes.")
+    logger.info(f"Sopa segmentation finished. Found {nr_of_shapes_found} shapes.")
 
 
 def instanseg_callable_sopa(
@@ -163,7 +163,6 @@ def instanseg_callable_sopa(
 
     instanseg_model = torch.load(path_model, weights_only=False)
     instanseg_model = InstanSeg(model_type=instanseg_model, device=device)
-    logger.info(f"SHAPE {img.shape}")
 
     labeled_output, _ = instanseg_model.eval_small_image(
         img,
