@@ -142,6 +142,55 @@ def sopa_segment(
     logger.info(f"Sopa segmentation finished. Found {nr_of_shapes_found} shapes.")
 
 
+def squidpy_segment(
+    sdata,
+    img_layer: str,
+    workers: int,
+    threads: int,
+):
+    import squidpy as sq
+    from dask.distributed import Client, LocalCluster
+
+    logger.info(f"Running on dataset {sdata}")
+    if workers is not None and threads is not None:
+        cluster = LocalCluster(
+            n_workers=workers,
+            threads_per_worker=threads,
+            memory_limit="500GB",  # prevent spilling to disk
+        )
+
+        client = Client(cluster)
+        logger.info(client.dashboard_link)
+    else:
+        logger.info(
+            "Workers or threads not specified, running segmentation without a client."
+        )
+
+    logger.info("Start segmentation.")
+
+    arr = sdata[img_layer].data
+    arr = arr[:, None, ...].transpose(2, 3, 1, 0)  # (y,x,z,c)
+
+    ic = sq.im.ImageContainer(arr, layer=img_layer, lazy=True)
+
+    sq.im.segment(
+        img=ic,
+        layer=img_layer,
+        layer_added="labels_cells_instanseg",
+        method=instanseg_callable_squidpy,
+        lazy=True,
+        channel=ic[img_layer].channels.data.tolist(),
+        depth=(50, 50, 0, 0),
+    )
+
+    sdata["labels_cells_instanseg"] = sd.models.Labels2DModel.parse(
+        ic["labels_cells_instanseg"].data.squeeze(), dims=("y", "x")
+    )
+    sdata.write_element("labels_cells_instanseg")
+
+    logger.info("Segmentation finished.")
+
+
 def instanseg_callable_sopa(
     img: NDArray,
     device: str | None = "cpu",
@@ -178,6 +227,44 @@ def instanseg_callable_sopa(
     # already has a trivial z dimension (batch) at 0
     # dimension 1 is (nucleus mask (0) and whole cell mask (1))
     return labeled_output.squeeze()
+
+
+def instanseg_callable_squidpy(
+    img: NDArray,
+    device: str | None = "cpu",
+    dtype: type = np.uint32,
+    pixel_size: float = 0.5,
+    **kwargs,  # kwargs passed to .eval_small_image
+) -> NDArray:
+    # input is y,x,c. z is ignored by squidpy
+    img = img.transpose(2, 0, 1)  # this is c,y,x
+    # output is y,x
+    from instanseg import InstanSeg
+    import torch
+
+    _ = InstanSeg("fluorescence_nuclei_and_cells", verbosity=1, device="cpu")
+
+    path_model = os.path.join(
+        os.environ.get("INSTANSEG_BIOIMAGEIO_PATH"),
+        "fluorescence_nuclei_and_cells/0.1.0/instanseg.pt",
+    )
+
+    instanseg_model = torch.load(path_model, weights_only=False)
+    instanseg_model = InstanSeg(model_type=instanseg_model, device=device)
+
+    labeled_output, _ = instanseg_model.eval_small_image(
+        img,
+        pixel_size=pixel_size,
+        resolve_cell_and_nucleus=True,
+        cleanup_fragments=True,
+        target="cells",
+        **kwargs,
+    )
+
+    labeled_output = labeled_output.permute([0, 2, 3, 1]).cpu().numpy().astype(dtype)
+
+    labeled_output = labeled_output.squeeze()
+    return labeled_output
 
 
 def zarr_file(value):
@@ -276,6 +363,13 @@ if __name__ == "__main__":
         sopa_segment(
             sdata,
             chunksize=args.chunksize,
+            img_layer=args.img_layer,
+            workers=args.workers,
+            threads=args.threads,
+        )
+    if args.method == "squidpy":
+        squidpy_segment(
+            sdata,
             img_layer=args.img_layer,
             workers=args.workers,
             threads=args.threads,
