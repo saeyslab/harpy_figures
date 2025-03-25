@@ -7,6 +7,8 @@ profiles/
 hpc_scripts/*
 
 !hpc_scripts/submit_segment_harpy_jobs.sh
+!hpc_scripts/submit_segment_squidpy.sh
+!hpc_scripts/submit_segment_sopa.sh
 !hpc_scripts/submit_segment_instanseg_jobs.sh
 !hpc_scripts/submit_flowsom_harpy_jobs.sh
 !hpc_scripts/submit_aggregation_harpy_jobs.sh
