@@ -6,6 +6,7 @@ import numpy as np
 import spatialdata as sd
 
 from prep_multi_channel_dataset import create_multi_channel_dataset
+from prep_single_channel_dataset import create_single_channel_dataset
 
 from numpy.typing import NDArray
 
@@ -66,6 +67,49 @@ def harpy_segment(
         trim=False,
         overwrite=True,
     )
+
+
+def harpy_cellpose_segment(
+    sdata: sd.SpatialData,
+    chunksize: int,
+    img_layer: str,
+    workers: int | None = None,
+    threads: int | None = None,
+):
+    import harpy as hp
+    from dask.distributed import Client, LocalCluster
+
+    logger.info(f"Running on dataset {sdata}")
+    if workers is not None and threads is not None:
+        cluster = LocalCluster(
+            n_workers=workers,
+            threads_per_worker=threads,
+            memory_limit="500GB",  # prevent spilling to disk
+        )
+
+        client = Client(cluster)
+        logger.info(client.dashboard_link)
+    else:
+        logger.info(
+            "Workers or threads not specified, running segmentation without a client."
+        )
+
+    logger.info("Start segmentation.")
+
+    sdata = hp.im.segment(
+        sdata,
+        img_layer=img_layer,
+        model=hp.im.cellpose_callable,
+        device="cpu",
+        model_type="nuclei",
+        output_labels_layer="labels_cells_harpy",
+        diameter=30,
+        depth=50,
+        channels=[0, 1],
+        chunks=(chunksize, chunksize),
+    )
+
+    logger.info("End segmentation.")
 
 
 def instanseg_segment(
@@ -288,7 +332,7 @@ if __name__ == "__main__":
         "--c_dim",
         type=int,
         default=10,
-        help="The target number of channels (first axis). Default is 10.",
+        help="The target number of channels (first axis). Default is 10. Ignored if 'cellpose' in 'method'.",
     )
     parser.add_argument(
         "--y_dim",
@@ -325,17 +369,27 @@ if __name__ == "__main__":
     #     p_profile.parent.mkdir(parents=True)
     if not d.exists():
         logger.info(f"Dataset {d} does not exist. Creating dataset at {args.dataset}")
-        sdata = create_multi_channel_dataset(
-            path=args.dataset,
-            c_dim=args.c_dim,
-            y_dim=args.y_dim,
-            x_dim=args.x_dim,
-            chunksize=args.chunksize,
-            img_layer=args.img_layer,
-            dtype=np.uint32
-            if args.method == "sopa"
-            else np.float32,  # sopa only accepts np.uint
-        )
+        if "cellpose" not in args.method:
+            sdata = create_multi_channel_dataset(
+                path=args.dataset,
+                c_dim=args.c_dim,
+                y_dim=args.y_dim,
+                x_dim=args.x_dim,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+                dtype=np.uint32
+                if args.method == "sopa"
+                else np.float32,  # sopa only accepts np.uint
+            )
+        else:
+            sdata = create_single_channel_dataset(
+                path=args.dataset,
+                y_dim=args.y_dim,
+                x_dim=args.x_dim,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+            )
+
     else:
         raise FileExistsError(
             f"A dataset already exists at {d}. To create a new dataset, "
@@ -353,6 +407,15 @@ if __name__ == "__main__":
             workers=args.workers,
             threads=args.threads,
         )
+    if args.method == "harpy_cellpose":
+        harpy_cellpose_segment(
+            sdata,
+            chunksize=args.chunksize,
+            img_layer=args.img_layer,
+            workers=args.workers,
+            threads=args.threads,
+        )
+
     if args.method == "instanseg":
         instanseg_segment(
             sdata,
