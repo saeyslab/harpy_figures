@@ -6,7 +6,7 @@ import numpy as np
 import spatialdata as sd
 
 from prep_multi_channel_dataset import create_multi_channel_dataset
-from prep_single_channel_dataset import create_single_channel_dataset
+from prep_cellpose_dataset import create_cellpose_dataset
 
 from numpy.typing import NDArray
 
@@ -101,11 +101,11 @@ def harpy_cellpose_segment(
         img_layer=img_layer,
         model=hp.im.cellpose_callable,
         device="cpu",
-        model_type="nuclei",
+        model_type="cyto3",
         output_labels_layer="labels_cells_harpy",
         diameter=30,
         depth=50,
-        channels=[0, 1],
+        channels=[2, 1],
         chunks=(chunksize, chunksize),
     )
 
@@ -382,7 +382,7 @@ if __name__ == "__main__":
                 else np.float32,  # sopa only accepts np.uint
             )
         else:
-            sdata = create_single_channel_dataset(
+            sdata = create_cellpose_dataset(
                 path=args.dataset,
                 y_dim=args.y_dim,
                 x_dim=args.x_dim,

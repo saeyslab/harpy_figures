@@ -11,7 +11,7 @@ import math
 import numpy as np
 
 
-def create_single_channel_dataset(
+def create_cellpose_dataset(
     path: str | Path,
     y_dim: int = 10000,
     x_dim: int = 10000,
@@ -35,10 +35,10 @@ def create_single_channel_dataset(
     # Tile the array
     tiled = da.tile(sdata["image"].data, (1, repeat_y, repeat_x))
 
-    # take channel at index 6, this is a DAPI stain.
-    tiled = tiled[6, ...][None]
+    # take channel at index 6 and 8, this is a DAPI stain, and some cell specific stain.
+    tiled = tiled[6:8, ...]
 
-    tiled = tiled[:, :y_dim, :x_dim].rechunk((1, chunksize, chunksize))
+    tiled = tiled[:, :y_dim, :x_dim].rechunk((tiled.shape[0], chunksize, chunksize))
 
     hp.im.add_image_layer(
         sdata, arr=tiled.astype(dtype), output_layer=img_layer, overwrite=True
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         help="Chunksize in y and x. Chunksize in c is c_dim.",
     )
     args = parser.parse_args()
-    create_single_channel_dataset(
+    create_cellpose_dataset(
         path=args.output_path,
         y_dim=args.y_dim,
         x_dim=args.x_dim,
