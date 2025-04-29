@@ -14,6 +14,7 @@ def harpy_flowsom(
     sdata: sd.SpatialData,
     img_layer: str,
     workers: int | None = None,
+    method: str = "harpy",
     threads: int | None = None,
     batches_flowsom: int = 1,
     memory_limit: int | None = None,
@@ -44,8 +45,21 @@ def harpy_flowsom(
         )
         client = None
 
-    batch_model = fs.models.BatchFlowSOMEstimator
-
+    if method == "flowsom_batch":
+        cluster_model = fs.models.BatchFlowSOMEstimator
+        cluster_model_kwargs = {
+            "num_batches": batches_flowsom,
+        }
+    elif method == "flowsom":
+        cluster_model = fs.models.FlowSOMEstimator
+        cluster_model_kwargs = {}
+    elif method == "pyflowsom":
+        cluster_model = fs.models.PyFlowSOMEstimator
+        cluster_model_kwargs = {}
+    else:
+        raise ValueError(
+            f"Method {method} not supported."
+        )
     logger.info("Start flowsom pixel clustering.")
 
     sdata, fsom, mapping = hp.im.flowsom(
@@ -62,8 +76,8 @@ def harpy_flowsom(
         fraction=0.05,
         chunks=512,
         client=client,
-        model=batch_model,
-        num_batches=batches_flowsom,
+        model=cluster_model,
+        **cluster_model_kwargs,
         xdim=10,  # 12
         ydim=10,  # 12
         z_score=True,
@@ -149,18 +163,20 @@ if __name__ == "__main__":
             c_chunksize=1,
             img_layer=args.img_layer,
         )
+        logger.info("Dataset created. Exiting.")
     else:
-        raise FileExistsError(
-            f"A dataset already exists at {d}. To create a new dataset, "
-            "please specify a different path or remove the existing dataset."
+        logger.info(
+            f"A dataset exists at {d} and will be used."
         )
-
-    harpy_flowsom(
-        sdata,
-        img_layer=args.img_layer,
-        workers=args.workers,
-        threads=args.threads,
-        batches_flowsom=args.batches_flowsom,
-        local_directory=args.local_directory,
-        memory_limit=args.memory_limit,
-    )
+        sdata = sd.read_zarr(d)
+        logger.info("Dataset loaded.")
+        harpy_flowsom(
+            sdata,
+            img_layer=args.img_layer,
+            workers=args.workers,
+            method=args.method,
+            threads=args.threads,
+            batches_flowsom=args.batches_flowsom,
+            local_directory=args.local_directory,
+            memory_limit=args.memory_limit,
+        )

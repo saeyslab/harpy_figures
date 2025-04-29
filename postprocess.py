@@ -30,6 +30,13 @@ def extend_summary(summary):
                 value = command.split()[i + 1]
                 if value.startswith("--"):
                     value = None
+                    continue
+                try:
+                    # try to convert to int
+                    value = int(value)
+                except ValueError:
+                    # if it fails, keep it as string
+                    pass
             else:
                 value = None
             params[key] = value
@@ -37,7 +44,7 @@ def extend_summary(summary):
     if dataset is None:
         raise ValueError(f"Dataset not found in {params}")
     print(dataset)
-    params['dataset_size'] = int(Path(dataset).stem.split('_')[-2])
+    params['pixels'] = params['c_dim'] * params['x_dim'] * params['y_dim']
     # params['dataset_size'] = int(Path(dataset).stem.split('_')[2])
     print(params)
     return {**summary, **params}

@@ -14,9 +14,17 @@ memray = ">=1.15.0,<2"
 hyperfine = ">=1.19.0,<2"
 ipykernel = ">=6.29.5,<7"
 seaborn = ">=0.13.2,<0.14"
+# segmentation models
+cellpose = "==3.0.11"
 
 [pypi-dependencies]
 con-duct = { version = ">=0.10.1, <0.11", extras = ["all"] }
+# needed for xr_spatial and flowsom
+# segmentation models
+instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
+xarray-spatial = "<0.4.0"
+# instanseg-torch = "==0.0.9"
+# tifffile = ">=2023.12.9,<2025.2.18"
 
 [tasks]
 prep_datasets = "python prep_datasets.py"
@@ -28,22 +36,21 @@ harpy = ["harpy"]
 sopa = ["sopa"]
 squidpy = ["squidpy"]
 
-
 [feature.squidpy.dependencies]
 scipy = ">=1.14.1,<2"
-scikit-image = ">=0.24.0,<0.25"
+scikit-image = "<0.25"
 pytorch = ">=2.2.2,<3"
 geopandas = ">=1.0.1,<2"
 dask = ">=2024.4.1,<=2024.11.2"
 torchvision = "<0.21"
 rasterio = ">=1.4.3,<2"
-fsspec = "<=2023.6"
+# fsspec = "<=2023.6"
 # dask = ">=2022.3.0,<2023"
 
 
 [feature.sopa.dependencies]
 scipy = ">=1.14.1,<2"
-scikit-image = ">=0.24.0,<0.25"
+scikit-image = "<0.25"
 pytorch = ">=2.2.2,<3"
 geopandas = ">=1.0.1,<2"
 dask = ">=2024.4.1,<=2024.11.2"
@@ -60,24 +67,26 @@ geopandas = ">=1.0.1,<2"
 dask = ">=2024.4.1,<=2024.11.2"
 torchvision = "<0.21"
 rasterio = ">=1.4.3,<2"
-cellpose = ">=3.0.11,<4"
 fsspec = "<=2023.6"
-# dask = ">=2022.3.0,<2023"
 
 [feature.harpy.pypi-dependencies]
 anndata = ">=0.9.1,<=0.10.8"
-spatialdata = ">=0.2.6"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
+# instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
+harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", branch = "add_tonsil_dataset"}
+flowsom = { git = "https://github.com/saeyslab/FlowSOM_Python.git", rev = "d8cb6a5" }
+pyflowsom = "==0.1.16"
+spatialdata = "==0.2.6"
 spatialdata_io = "==0.1.6"
-harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "c46c5cb" }
-flowsom = { git = "https://github.com/saeyslab/FlowSOM_Python.git", rev = "2e6b68c" }
+
+# instanseg-torch = "==0.0.8"
 
 [feature.sopa.pypi-dependencies]
-spatialdata = ">=0.2.6"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
-#sopa = ">=2.0.3"
+spatialdata = "==0.3.0"
+sopa = "==2.0.1"
 
 [feature.squidpy.pypi-dependencies]
-spatialdata = ">=0.2.6"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
-squidpy = ">=1.6.5"
+squidpy = "==1.6.5"
+spatialdata = "==0.2.6"
