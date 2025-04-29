@@ -5,9 +5,6 @@ import loguru
 import numpy as np
 import spatialdata as sd
 
-from prep_multi_channel_dataset import create_multi_channel_dataset
-from prep_cellpose_dataset import create_cellpose_dataset
-
 from numpy.typing import NDArray
 
 logger = loguru.logger
@@ -370,18 +367,18 @@ if __name__ == "__main__":
     if not d.exists():
         logger.info(f"Dataset {d} does not exist. Creating dataset at {args.dataset}")
         if "cellpose" not in args.method:
-            sdata = create_multi_channel_dataset(
+            from prep_multi_channel_dataset import create_multi_channel_macsima_dataset
+            sdata = create_multi_channel_macsima_dataset(
                 path=args.dataset,
                 c_dim=args.c_dim,
                 y_dim=args.y_dim,
                 x_dim=args.x_dim,
                 chunksize=args.chunksize,
                 img_layer=args.img_layer,
-                dtype=np.uint32
-                if args.method == "sopa"
-                else np.float32,  # sopa only accepts np.uint
+                dtype=np.uint32 if args.method == "sopa" else np.float32,  # sopa only accepts np.uint
             )
         else:
+            from prep_cellpose_dataset import create_cellpose_dataset
             sdata = create_cellpose_dataset(
                 path=args.dataset,
                 y_dim=args.y_dim,
@@ -389,51 +386,50 @@ if __name__ == "__main__":
                 chunksize=args.chunksize,
                 img_layer=args.img_layer,
             )
-
     else:
-        raise FileExistsError(
-            f"A dataset already exists at {d}. To create a new dataset, "
-            "please specify a different path or remove the existing dataset."
-        )
-        # logger.info(f"Dataset already exists. Reading dataset at {args.dataset}")
-        # sdata = sd.read_zarr(d)
-    # sdata needs to be backed, otherwise we persist mask in memory
-    # sdata.path = None
-    if args.method == "harpy":
-        harpy_segment(
-            sdata,
-            chunksize=args.chunksize,
-            img_layer=args.img_layer,
-            workers=args.workers,
-            threads=args.threads,
-        )
-    if args.method == "harpy_cellpose":
-        harpy_cellpose_segment(
-            sdata,
-            chunksize=args.chunksize,
-            img_layer=args.img_layer,
-            workers=args.workers,
-            threads=args.threads,
-        )
+        # raise FileExistsError(
+        #     f"A dataset already exists at {d}. To create a new dataset, "
+        #     "please specify a different path or remove the existing dataset."
+        # )
+        logger.info(f"Dataset already exists. Reading dataset at {d}")
+        sdata = sd.read_zarr(d)
+        # sdata needs to be backed, otherwise we persist mask in memory
+        # sdata.path = None
+        if args.method == "harpy":
+            harpy_segment(
+                sdata,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+                workers=args.workers,
+                threads=args.threads,
+            )
+        if args.method == "harpy_cellpose":
+            harpy_cellpose_segment(
+                sdata,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+                workers=args.workers,
+                threads=args.threads,
+            )
 
-    if args.method == "instanseg":
-        instanseg_segment(
-            sdata,
-            chunksize=args.chunksize,
-            img_layer=args.img_layer,
-        )
-    if args.method == "sopa":
-        sopa_segment(
-            sdata,
-            chunksize=args.chunksize,
-            img_layer=args.img_layer,
-            workers=args.workers,
-            threads=args.threads,
-        )
-    if args.method == "squidpy":
-        squidpy_segment(
-            sdata,
-            img_layer=args.img_layer,
-            workers=args.workers,
-            threads=args.threads,
-        )
+        if args.method == "instanseg":
+            instanseg_segment(
+                sdata,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+            )
+        if args.method == "sopa":
+            sopa_segment(
+                sdata,
+                chunksize=args.chunksize,
+                img_layer=args.img_layer,
+                workers=args.workers,
+                threads=args.threads,
+            )
+        if args.method == "squidpy":
+            squidpy_segment(
+                sdata,
+                img_layer=args.img_layer,
+                workers=args.workers,
+                threads=args.threads,
+            )
