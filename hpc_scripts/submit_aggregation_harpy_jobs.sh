@@ -1,19 +1,28 @@
 #!/bin/bash
 # Define your parameter arrays:
-DIM_VALUES=(2000 10000 20000 50000)
-RAM_VALUES=(10 30 30 40)  # Memory in GB
-TIME_VALUES=(01 01 01 02)
+DIM_VALUES=(500 1000 2000 5000 10000 20000)
+# DIM_VALUES=(500)
+RAM_VALUES=(10 10 10 10 50 50)  # Memory in GB
+# RAM_VALUES=(10)
+TIME_VALUES=(01 01 01 01 02 02)
+# TIME_VALUES=(01)
 
 WORKERS_VALUES=(1 2 4 8)
-
-METHOD="harpy"
+# WORKERS_VALUES=(1)
+METHOD_VALUES=(harpy xr_spatial spatialdata sopa squidpy)
+ENV_VALUES=(harpy harpy harpy sopa squidpy)
+VERSION=008
 
 for i in "${!DIM_VALUES[@]}"; do
   DIM=${DIM_VALUES[$i]}
   MEM=${RAM_VALUES[$i]}
   TIME=${TIME_VALUES[$i]}
   for WORKERS in "${WORKERS_VALUES[@]}"; do
-    sbatch <<EOF
+    for j in "${!METHOD_VALUES[@]}"; do
+      METHOD=${METHOD_VALUES[$j]}
+      ENV=${ENV_VALUES[$j]}
+      # Create the job script
+      sbatch <<EOF
 #!/bin/bash
 #SBATCH --partition=doduo
 #SBATCH --nodes=1
@@ -21,25 +30,32 @@ for i in "${!DIM_VALUES[@]}"; do
 #SBATCH --cpus-per-task=${WORKERS}
 #SBATCH --time=${TIME}:00:00
 #SBATCH --mem=${MEM}G
-#SBATCH --job-name=aggregation_${METHOD}_${DIM}_${WORKERS}
-#SBATCH --output=aggregation_${METHOD}_${DIM}_${WORKERS}.out
-#SBATCH --error=aggregation_${METHOD}_${DIM}_${WORKERS}.err
+#SBATCH --job-name=aggregation_${VERSION}_${METHOD}_${DIM}_${WORKERS}
+#SBATCH --output=aggregation_${VERSION}_${METHOD}_${DIM}_${WORKERS}.out
+#SBATCH --error=aggregation_${VERSION}_${METHOD}_${DIM}_${WORKERS}.err
 
 # Set parameters
 DIM=${DIM}
-C_DIM=10
+C_DIM=20
 THREADS=${WORKERS}
+CHUNKSIZE=1000
 WORKERS=1
 METHOD=${METHOD}
-DATASET="\$VSC_DATA_VO_USER/VIB/DATA/benchmark_harpy/sdata_\${DIM}_rechunked_4096.zarr"
+VERSION=${VERSION}
+ENV=${ENV}
+ORIG_DATASET="\$VSC_DATA_VO_USER/VIB/DATA/sdata_segment_011_harpy_\${DIM}_8.zarr"
+DATASET="\$VSC_DATA_VO_USER/VIB/DATA/benchmark_harpy/sdata_agg_\${VERSION}_\${METHOD}_\${DIM}_\${THREADS}.zarr"
 IMG_LAYER="image_tiled"
 LABELS_LAYER="labels_cells_harpy"
-LOG_DIR=".duct/logs_aggregation"
+LOG_DIR=".duct/logs_aggregation_\${VERSION}"
 LOG_PREFIX="\${LOG_DIR}/\${METHOD}_\${DIM}_\${THREADS}"
 
 mkdir -p "\$LOG_DIR"
 
-monitor -d 5 -l \${LOG_PREFIX}monitor.log -- pixi run --frozen -e harpy duct -p \${LOG_PREFIX} \\
+# copy the dataset to a local directory
+cp -r "\$ORIG_DATASET" "\$DATASET"
+
+pixi run --frozen -e "\$ENV" duct -p \${LOG_PREFIX} \\
   --sample-interval 0.5 \\
   --report-interval 5 \\
   python ../benchmark_aggregation.py \\
@@ -52,4 +68,4 @@ monitor -d 5 -l \${LOG_PREFIX}monitor.log -- pixi run --frozen -e harpy duct -p 
 EOF
   done
 done
-
+done

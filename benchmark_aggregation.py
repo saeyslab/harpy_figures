@@ -139,7 +139,6 @@ def sopa_aggregation(
     threads: int | None = None,
 ):
     from dask.distributed import Client, LocalCluster
-    import harpy as hp
     import sopa
 
     logger.info(f"Running on dataset {sdata}")
@@ -158,14 +157,14 @@ def sopa_aggregation(
         )
 
     # TODO: do vectorization outside this function
-    logger.info("Start vectorization.")
-    sdata = hp.sh.vectorize(
-        sdata,
-        labels_layer=labels_layer,
-        output_layer="shapes_cells_harpy",
-        overwrite=True,
-    )
-    logger.info("End vectorization.")
+    # logger.info("Start vectorization.")
+    # sdata = hp.sh.vectorize(
+    #     sdata,
+    #     labels_layer=labels_layer,
+    #     output_layer="shapes_cells_harpy",
+    #     overwrite=True,
+    # )
+    # logger.info("End vectorization.")
 
     logger.info("Start aggregation.")
 
@@ -317,6 +316,10 @@ if __name__ == "__main__":
     d = Path(args.dataset).resolve()
     if not d.exists():
         raise FileNotFoundError(f"No .zarr folder found at {d}.")
+        logger.info(f"No .zarr folder found at {d}. Creating dataset.")
+        # copy the dataset to the zarr folder
+        # if method is sopa, add the vectorization step
+
     else:
         sdata = sd.read_zarr(d)
 

@@ -23,6 +23,8 @@ con-duct = { version = ">=0.10.1, <0.11", extras = ["all"] }
 # segmentation models
 instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
 xarray-spatial = "<0.4.0"
+spatialdata = "==0.4.0"
+numba = ">=0.55.0"
 # instanseg-torch = "==0.0.9"
 # tifffile = ">=2023.12.9,<2025.2.18"
 
@@ -76,17 +78,18 @@ anndata = ">=0.9.1,<=0.10.8"
 harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", branch = "add_tonsil_dataset"}
 flowsom = { git = "https://github.com/saeyslab/FlowSOM_Python.git", rev = "d8cb6a5" }
 pyflowsom = "==0.1.16"
-spatialdata = "==0.2.6"
+spatialdata = "==0.4.0"
+numba = ">=0.55.0"
 spatialdata_io = "==0.1.6"
 
 # instanseg-torch = "==0.0.8"
 
 [feature.sopa.pypi-dependencies]
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
-spatialdata = "==0.3.0"
+# spatialdata = "==0.3.0"
 sopa = "==2.0.1"
 
 [feature.squidpy.pypi-dependencies]
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 squidpy = "==1.6.5"
-spatialdata = "==0.2.6"
+spatialdata = "==0.4.0"

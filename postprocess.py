@@ -44,6 +44,18 @@ def extend_summary(summary):
     if dataset is None:
         raise ValueError(f"Dataset not found in {params}")
     print(dataset)
+    if not 'c_dim' in params:
+        params['c_dim'] = 20
+    # if x_dim or y_dim is not in params, get the from dataset by parsing the second to last number of the stem
+    if not ('x_dim' in params or 'y_dim' in params):
+        # get the second to last number of the stem
+        # e.g. sdata_50000_rechunked_4096.zarr -> 4096
+        # e.g. sdata_50000_rechunked_4096_x512_y512.zarr -> 512
+        # e.g. sdata_50000_rechunked_4096_x512_y512_z256.zarr -> 256
+        # e.g. sdata_50000_rechunked_4096_x512_y512_z256_c20.zarr -> 20
+        # e.g. sdata_50000_rechunked_4096_x512_y512_z256_c20_t1.zarr -> 1
+        params['x_dim'] = int(Path(dataset).stem.split('_')[-2])
+        params['y_dim'] = int(Path(dataset).stem.split('_')[-2])
     params['pixels'] = params['c_dim'] * params['x_dim'] * params['y_dim']
     # params['dataset_size'] = int(Path(dataset).stem.split('_')[2])
     print(params)

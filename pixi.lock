@@ -422,7 +422,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/0f/15/5bf3b99495fb160b63f95972b81750f18f7f4e02ad051373b669d17d44f2/aiohappyeyeballs-2.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e2/ce/1a75384e01dd1bf546898b6062b1b5f7a59b6692ef802e4dd6db64fed264/aiohttp-3.11.18-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/ec/6a/bc7e17a3e87a2985d3e8f4da4cd0f481060eb78fb08596c42be62c90a4d9/aiosignal-1.3.2-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/0a/4b/ab615fea52e34579d5c6c7dba86b4f9d7f3cdb6a170b348ec49f34cf4355/anndata-0.11.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/9f/d8/3388c7da49f522e51ab2f919797db28782216cadc9ecc9976160302cfcd6/array_api_compat-1.11.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2d/6a/885bc91484e1aa8f618f6f0228d76d0e67000b0fdd6090673b777e311913/asciitree-0.3.3.tar.gz
       - pypi: https://files.pythonhosted.org/packages/77/06/bb80f5f86020c4551da315d78b3ab75e8228f89f0162f2c3a819e407941a/attrs-25.3.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2a/d1/8831b5fe9a4beb5c4af5dcf9a772660aa1f1e84596667708f634d290c62e/bioio-1.5.2-py3-none-any.whl
@@ -441,34 +443,46 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/61/bf/fd60001b3abc5222d8eaa4a204cd8c0ae78e75adc688f33ce4bf25b7fafa/fasteners-0.19-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/87/2f/0c819372fa9f0c07b153124bf58683b8d0ca7bb73ea5ccde9b9ef1745beb/frozenlist-1.6.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/18/67/a7fa2d650602731c90e0a86279841b4586e14228199e8c09165ba4863e29/geojson-3.2.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/c4/64/7d344cfcef5efddf9cf32f59af7f855828e9d74b5f862eddf5bfd9f25323/geopandas-1.0.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/03/71/c99f662d4832c8835453cf3476f95daa28372023bda4aa1fca9e97c24f09/h5py-3.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: git+https://github.com/berombau/instanseg.git#e4f0794c4f98263e50c21fcae0244b5da9eabe5a
       - pypi: https://files.pythonhosted.org/packages/69/4a/4f9dbeb84e8850557c02365a0eee0649abe5eb1d84af92a25731c6c0f922/jsonschema-4.23.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/01/0e/b27cdbaccf30b890c40ed1da9fd4a3593a5cf94dae54fb34f8a4b74fcd3f/jsonschema_specifications-2025.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/07/8c/61763abd242af84f355ca4ef1ee096d3c1b7514819564cce70fd18c22e9a/lxml-5.4.0-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/70/57/c008e861b3052405eebf921fd56a748322d8c44dcfcab164fffbccbdcdc4/multidict-6.4.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/51/c0/00c9809d8b9346eb238a6bbd5f83e846a4ce4503da94a4c08cb7284c325b/multipledispatch-1.0.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/4f/02/eff2e0a291201b70f5c342a8dac0ec67c75aa912af50a999054b99755832/multiscale_spatial_image-2.0.2-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a6/a8/908a226632ffabf19caf8c99f1b2898f2f22aac02795a6fe9d018fd6d9dd/numcodecs-0.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/93/c7/5d63372b13bfe9eaff26d540e7a1d2da5f0b4d82a5cbe634b638f1df61a3/ome_types-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/c8/35ac60b20eccccf84638a872c3b4ebefad46b20f87540ca17a37908b1db6/ome_zarr-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/79/f0/f40ebcf799353fc40417e3afa8b14e7a423e473bd26e285a75090aad609a/ome_zarr_models-0.1.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cf/f7/3367feadd4ab56783b0971c9b7edfbdd68e0c70ce877949a5dd2117ed4a0/palettable-3.3.3-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/99/56/370a6636e072a037b52499edd8928942df7f887974fc54444ece5152d26a/param-2.2.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a8/87/77cc11c7a9ea9fd05503def69e3d18605852cd0d4b0d3b8f15bbeb3ef1d1/pooch-1.8.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fa/c9/e85aeeeaae83358e2a1ef32d6ff50a483a5d5248bc38510d030a6f4e2816/propcache-0.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/75/e7/c7c1e9e1b6b23ca1db7af3c6826d57d8da883021f751edcc9c82143b127a/pyct-0.5.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b0/1d/407b29780a289868ed696d1616f4aad49d6388e5a77f567dcd2629dcd7b8/pydantic-2.11.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0b/60/516484135173aa9e5861d7a0663dce82e4746d2e7f803627d8c25dfa5578/pydantic_core-2.33.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/df/ac/bee195ee49256385fad460ce420aeb42703a648dba487c20b6fd107e42ea/pydantic_extra_types-2.10.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ef/c4/a21a21e34655052fcf5f5bcfa2d7c8795c6f38bc1aa1ee110754a16d5151/pydantic_zarr-0.7.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/ae/15/501aa4823c142232169d54255ab343f28c4ea9e7fa489b8433dcc873a942/pyogrio-0.10.0-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/46/bb/cf48ce5ba1481d568c5fb2b74ecc55e64207a7ee6444a3d0cb04f0410020/pyout-0.8.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/3c/ac/12fab74a908d40b63174dc704587febd0729414804bbfd873cabe504ff2d/pyproj-3.7.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/aa/fa/723fa6a48a419b044146cd92fa6a66ead8532d96c352fbc2f2a1546cb5b6/rasterio-1.4.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/c1/b1/3baf80dc6d2b7bc27a95a67752d0208e410351e3feb4eb78de5f77454d8d/referencing-0.36.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e7/0c/91cf17dffa9a38835869797a9f041056091ebba6a53963d3641207e3d467/rpds_py-0.24.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/a6/24/4d91e05817e92e3a61c8a21e08fd0f390f5301f1c448b137c57c4bc6e543/semver-3.0.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/92/07/3e2738c542d73182066196b8ce99388cb537d19e300e428d50b1537e3b21/shapely-2.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/88/ab/902a46f7b4f3710461e799b241985fba463eff49b59a500e8a6fa267f855/slideio-2.7.1-cp311-cp311-manylinux_2_28_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/b9/c1/16eb09d03eb7096b901e816dc93f53819f83b867c7d5dbb075f837d0120b/spatial_image-1.2.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/79/4b78862a61d1ba96bfcfffeb41b0b5f60da27e8851eb13bb6053bf230aad/tiffslide-2.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/31/08/aa4fdfb71f7de5176385bd9e90852eaf6b5d622735020ad600f2bab54385/typing_inspection-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b4/b0/9fc566b0fe08b282c850063591a756057c3247b2362b9286429ec5bf1721/wrapt-1.17.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/91/fd/973deafd9f87085136a58573600646b408ae7af47859f35151f0d83d5090/xarray-2025.3.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/40/ed/1c4631ad5909487ea8907cd326d9855c2207d790e3936e77bda48173b8be/xarray-2024.11.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/aa/7b/9adbd82e2b7b8571da23856a890324b42cfbc38ae0ceac2177e5256f7216/xarray_dataclasses-1.9.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a9/6d/f585a27b380ee987619b5617c0ca672a71a4345b67cfedbb6299750ce845/xarray_schema-0.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ae/a9/b7643b865e73e35ccc7842c2c7f6f946bd24d63c0026eb6d0bace14c7474/xarray_spatial-0.3.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6c/28/ce7a7b48f8020291c53e425ad1ad581ea8152b0df4a5e6d289c24ef82bbe/xmlschema-4.0.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/ac/27a6fcf61c64549a17b9eaa087ae7876417b5ed9efb6efdec8b52289cae4/xsdata-24.3.1-py3-none-any.whl
@@ -996,7 +1010,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/db/98/9578ce1d8ae951cf44e6b7434854824f0eae12d54b270e80014f8ab1971c/session_info2-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/ab/902a46f7b4f3710461e799b241985fba463eff49b59a500e8a6fa267f855/slideio-2.7.1-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b9/c1/16eb09d03eb7096b901e816dc93f53819f83b867c7d5dbb075f837d0120b/spatial_image-1.2.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/a5/b5/ea49151c7f846a2f083271c9c0a92c046a0d5b522369e839089d8022e870/spatialdata-0.2.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5b/2e/cb0c4ad2d541f20a64ba26c9be7131777ca97347aa38aaba47044780e090/spatialdata_io-0.1.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/c7/4102536de33c19d090ed2b04e90e7452e2e3dc653cf3323208034eaaca27/stdlib_list-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl
@@ -1522,7 +1536,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/88/ab/902a46f7b4f3710461e799b241985fba463eff49b59a500e8a6fa267f855/slideio-2.7.1-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/2d/f0/9eeac7ed4e5c7990b06fbc3e340f7761c07102941c3065d507d833a22f55/sopa-2.0.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b9/c1/16eb09d03eb7096b901e816dc93f53819f83b867c7d5dbb075f837d0120b/spatial_image-1.2.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/e4/ad/63adb55dd06413e11c720917a04bd6b35092a655d5cf020b94bf9224940a/spatialdata-0.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5e/49/3ab2dfc69f9fd70d62f5f9b3039dab4a27506c605a9931e70db22b3ba5f5/spatialdata_io-0.1.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/c7/4102536de33c19d090ed2b04e90e7452e2e3dc653cf3323208034eaaca27/stdlib_list-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/79/4b78862a61d1ba96bfcfffeb41b0b5f60da27e8851eb13bb6053bf230aad/tiffslide-2.5.0-py3-none-any.whl
@@ -1530,8 +1544,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/31/08/aa4fdfb71f7de5176385bd9e90852eaf6b5d622735020ad600f2bab54385/typing_inspection-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3c/8f/671c0e1f2572ba625cbcc1faeba9435e00330c3d6962858711445cf1e817/umap_learn-0.5.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b4/b0/9fc566b0fe08b282c850063591a756057c3247b2362b9286429ec5bf1721/wrapt-1.17.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/91/fd/973deafd9f87085136a58573600646b408ae7af47859f35151f0d83d5090/xarray-2025.3.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/00/45/05d49def03f964cd9524c1b7a175aa56bd54577ffd23e97ef60f199f161f/xarray_dataclasses-1.4.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/40/ed/1c4631ad5909487ea8907cd326d9855c2207d790e3936e77bda48173b8be/xarray-2024.11.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/aa/7b/9adbd82e2b7b8571da23856a890324b42cfbc38ae0ceac2177e5256f7216/xarray_dataclasses-1.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a9/6d/f585a27b380ee987619b5617c0ca672a71a4345b67cfedbb6299750ce845/xarray_schema-0.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ae/a9/b7643b865e73e35ccc7842c2c7f6f946bd24d63c0026eb6d0bace14c7474/xarray_spatial-0.3.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6c/28/ce7a7b48f8020291c53e425ad1ad581ea8152b0df4a5e6d289c24ef82bbe/xmlschema-4.0.1-py3-none-any.whl
@@ -2042,7 +2056,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c5/c4/f6b7c0ec5241a2bde90c7ba1eca6ba44f8488bcedafe9072c79593015ec0/session_info-1.0.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/ab/902a46f7b4f3710461e799b241985fba463eff49b59a500e8a6fa267f855/slideio-2.7.1-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b9/c1/16eb09d03eb7096b901e816dc93f53819f83b867c7d5dbb075f837d0120b/spatial_image-1.2.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/a5/b5/ea49151c7f846a2f083271c9c0a92c046a0d5b522369e839089d8022e870/spatialdata-0.2.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4a/d9/419c241e27ec311793bdb2980d7261f5383eadaed56354161865a65b102b/squidpy-1.6.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/c7/4102536de33c19d090ed2b04e90e7452e2e3dc653cf3323208034eaaca27/stdlib_list-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/79/4b78862a61d1ba96bfcfffeb41b0b5f60da27e8851eb13bb6053bf230aad/tiffslide-2.5.0-py3-none-any.whl
@@ -2051,8 +2065,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/3c/8f/671c0e1f2572ba625cbcc1faeba9435e00330c3d6962858711445cf1e817/umap_learn-0.5.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6e/78/36828a4d857b25896f9774c875714ba4e9b3bc8a92d2debe3f4df3a83d4f/validators-0.34.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b4/b0/9fc566b0fe08b282c850063591a756057c3247b2362b9286429ec5bf1721/wrapt-1.17.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/91/fd/973deafd9f87085136a58573600646b408ae7af47859f35151f0d83d5090/xarray-2025.3.1-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/00/45/05d49def03f964cd9524c1b7a175aa56bd54577ffd23e97ef60f199f161f/xarray_dataclasses-1.4.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/40/ed/1c4631ad5909487ea8907cd326d9855c2207d790e3936e77bda48173b8be/xarray-2024.11.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/aa/7b/9adbd82e2b7b8571da23856a890324b42cfbc38ae0ceac2177e5256f7216/xarray_dataclasses-1.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a9/6d/f585a27b380ee987619b5617c0ca672a71a4345b67cfedbb6299750ce845/xarray_schema-0.0.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ae/a9/b7643b865e73e35ccc7842c2c7f6f946bd24d63c0026eb6d0bace14c7474/xarray_spatial-0.3.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6c/28/ce7a7b48f8020291c53e425ad1ad581ea8152b0df4a5e6d289c24ef82bbe/xmlschema-4.0.1-py3-none-any.whl
@@ -3965,6 +3979,33 @@ packages:
   version: 3.2.0
   sha256: 69d14156469e13c79479672eafae7b37e2dcd19bdfd77b53f74fa8fe29910b52
   requires_python: '>=3.7'
+- pypi: https://files.pythonhosted.org/packages/c4/64/7d344cfcef5efddf9cf32f59af7f855828e9d74b5f862eddf5bfd9f25323/geopandas-1.0.1-py3-none-any.whl
+  name: geopandas
+  version: 1.0.1
+  sha256: 01e147d9420cc374d26f51fc23716ac307f32b49406e4bd8462c07e82ed1d3d6
+  requires_dist:
+  - numpy>=1.22
+  - pyogrio>=0.7.2
+  - packaging
+  - pandas>=1.4.0
+  - pyproj>=3.3.0
+  - shapely>=2.0.0
+  - psycopg-binary>=3.1.0 ; extra == 'all'
+  - sqlalchemy>=1.3 ; extra == 'all'
+  - geopy ; extra == 'all'
+  - matplotlib>=3.5.0 ; extra == 'all'
+  - mapclassify ; extra == 'all'
+  - xyzservices ; extra == 'all'
+  - folium ; extra == 'all'
+  - geoalchemy2 ; extra == 'all'
+  - pyarrow>=8.0.0 ; extra == 'all'
+  - pytest>=3.1.0 ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - pytest-xdist ; extra == 'dev'
+  - codecov ; extra == 'dev'
+  - black ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  requires_python: '>=3.9'
 - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-1.0.1-pyhd8ed1ab_3.conda
   sha256: 04f7e616ebbf6352ff852b53c57901e43f14e2b3c92411f99b5547f106bc192e
   md5: 1baca589eb35814a392eaad6d152447e
@@ -8581,6 +8622,20 @@ packages:
   - llvmlite>=0.30
   - joblib>=0.11
   - importlib-metadata>=4.8.1 ; python_full_version < '3.8'
+- pypi: https://files.pythonhosted.org/packages/ae/15/501aa4823c142232169d54255ab343f28c4ea9e7fa489b8433dcc873a942/pyogrio-0.10.0-cp311-cp311-manylinux_2_28_x86_64.whl
+  name: pyogrio
+  version: 0.10.0
+  sha256: 11e6c71d12da6b445e77d0fc0198db1bd35a77e03a0685e45338cbab9ce02add
+  requires_dist:
+  - certifi
+  - numpy
+  - packaging
+  - pytest-benchmark ; extra == 'benchmark'
+  - cython ; extra == 'dev'
+  - geopandas ; extra == 'geopandas'
+  - pytest ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  requires_python: '>=3.9'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/pyogrio-0.10.0-py311hf6089d3_1.conda
   sha256: b8e09996faef2eb049c27dff4d8167f9065fc1c2f6612295942abfec7dd5d4ab
   md5: 66e2acc549537d0e41f0c32fe63d0f2c
@@ -8618,6 +8673,13 @@ packages:
   - pkg:pypi/pyparsing?source=hash-mapping
   size: 95988
   timestamp: 1743089832359
+- pypi: https://files.pythonhosted.org/packages/3c/ac/12fab74a908d40b63174dc704587febd0729414804bbfd873cabe504ff2d/pyproj-3.7.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  name: pyproj
+  version: 3.7.1
+  sha256: 8c5dcf24ede53d8abab7d8a77f69ff1936c6a8843ef4fcc574646e4be66e5739
+  requires_dist:
+  - certifi
+  requires_python: '>=3.10'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/pyproj-3.7.1-py311h0960b38_1.conda
   sha256: f40110e0ba18460fb26c88558bac242a06b318d8e1e2943cfafb71b748575aed
   md5: 5e6251fd41d984a9d4fd1fe4b9bdca31
@@ -9507,6 +9569,21 @@ packages:
   - pkg:pypi/setuptools?source=hash-mapping
   size: 777736
   timestamp: 1740654030775
+- pypi: https://files.pythonhosted.org/packages/92/07/3e2738c542d73182066196b8ce99388cb537d19e300e428d50b1537e3b21/shapely-2.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  name: shapely
+  version: 2.1.0
+  sha256: 41f2be5d79aac39886f23000727cf02001aef3af8810176c29ee12cdc3ef3a50
+  requires_dist:
+  - numpy>=1.21
+  - numpydoc==1.1.* ; extra == 'docs'
+  - matplotlib ; extra == 'docs'
+  - sphinx ; extra == 'docs'
+  - sphinx-book-theme ; extra == 'docs'
+  - sphinx-remove-toctrees ; extra == 'docs'
+  - pytest ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - scipy-doctest ; extra == 'test'
+  requires_python: '>=3.10'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/shapely-2.1.0-py311h3dc67b8_0.conda
   sha256: 4ad0dbd446d4e64c09e30866da9caff2bae5d1d58a69c48356600faa3364b22c
   md5: 697054700855c7699805f41ad7f204a3
@@ -9646,60 +9723,10 @@ packages:
   - xarray-dataclasses
   - xarray>=2024.10.0
   requires_python: '>=3.10'
-- pypi: https://files.pythonhosted.org/packages/a5/b5/ea49151c7f846a2f083271c9c0a92c046a0d5b522369e839089d8022e870/spatialdata-0.2.6-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
   name: spatialdata
-  version: 0.2.6
-  sha256: 989f0d224cd9ccd927aeb095fdbab4a3ca323440406946bb956e6e6e898e70b6
-  requires_dist:
-  - anndata>=0.9.1
-  - click
-  - dask-image
-  - dask>=2024.4.1
-  - fsspec<=2023.6
-  - geopandas>=0.14
-  - multiscale-spatial-image>=2.0.2
-  - networkx
-  - numba
-  - numpy
-  - ome-zarr>=0.8.4
-  - pandas
-  - pooch
-  - pyarrow
-  - rich
-  - scikit-image
-  - scipy
-  - setuptools
-  - shapely>=2.0.1
-  - spatial-image>=1.1.0
-  - typing-extensions>=4.8.0
-  - xarray-schema
-  - xarray-spatial>=0.3.5
-  - xarray>=2024.10.0
-  - zarr<3
-  - bump2version ; extra == 'dev'
-  - ipython>=8.6.0 ; extra == 'docs'
-  - myst-nb ; extra == 'docs'
-  - sphinx-autobuild ; extra == 'docs'
-  - sphinx-autodoc-typehints ; extra == 'docs'
-  - sphinx-book-theme>=1.0.0 ; extra == 'docs'
-  - sphinx-copybutton ; extra == 'docs'
-  - sphinx-design ; extra == 'docs'
-  - sphinx-pytest ; extra == 'docs'
-  - sphinx>=4.5 ; extra == 'docs'
-  - sphinxcontrib-bibtex>=1.0.0 ; extra == 'docs'
-  - napari-spatialdata[all]>=0.2.4 ; extra == 'extra'
-  - spatialdata-io ; extra == 'extra'
-  - spatialdata-plot ; extra == 'extra'
-  - pytest ; extra == 'test'
-  - pytest-cov ; extra == 'test'
-  - pytest-mock ; extra == 'test'
-  - torch ; extra == 'test'
-  - torch ; extra == 'torch'
-  requires_python: '>=3.10,<3.13'
-- pypi: https://files.pythonhosted.org/packages/e4/ad/63adb55dd06413e11c720917a04bd6b35092a655d5cf020b94bf9224940a/spatialdata-0.3.0-py3-none-any.whl
-  name: spatialdata
-  version: 0.3.0
-  sha256: e060c4c93f1829771ee7a4b51c12722f658f607a2e446f981aaca54bd11a251e
+  version: 0.4.0
+  sha256: f0a3f76efda57a221a775686a4d376093bfea560492697f40820eb3ec6d6ea89
   requires_dist:
   - anndata>=0.9.1
   - click
@@ -9709,7 +9736,7 @@ packages:
   - geopandas>=0.14
   - multiscale-spatial-image>=2.0.2
   - networkx
-  - numba
+  - numba>=0.55.0
   - numpy
   - ome-zarr>=0.8.4
   - pandas
@@ -9722,6 +9749,7 @@ packages:
   - shapely>=2.0.1
   - spatial-image>=1.1.0
   - typing-extensions>=4.8.0
+  - xarray-dataclasses>=1.8.0
   - xarray-schema
   - xarray-spatial>=0.3.5
   - xarray>=2024.10.0
@@ -10439,62 +10467,6 @@ packages:
   - nc-time-axis ; extra == 'viz'
   - seaborn ; extra == 'viz'
   requires_python: '>=3.10'
-- pypi: https://files.pythonhosted.org/packages/91/fd/973deafd9f87085136a58573600646b408ae7af47859f35151f0d83d5090/xarray-2025.3.1-py3-none-any.whl
-  name: xarray
-  version: 2025.3.1
-  sha256: 3404e313930c226db70a945377441ea3c957225d8ba2d429e764c099bb91a546
-  requires_dist:
-  - numpy>=1.24
-  - packaging>=23.2
-  - pandas>=2.1
-  - scipy ; extra == 'accel'
-  - bottleneck ; extra == 'accel'
-  - numbagg ; extra == 'accel'
-  - numba>=0.54 ; extra == 'accel'
-  - flox ; extra == 'accel'
-  - opt-einsum ; extra == 'accel'
-  - xarray[accel,etc,io,parallel,viz] ; extra == 'complete'
-  - netcdf4 ; extra == 'io'
-  - h5netcdf ; extra == 'io'
-  - scipy ; extra == 'io'
-  - pydap ; python_full_version < '3.10' and extra == 'io'
-  - zarr ; extra == 'io'
-  - fsspec ; extra == 'io'
-  - cftime ; extra == 'io'
-  - pooch ; extra == 'io'
-  - sparse ; extra == 'etc'
-  - dask[complete] ; extra == 'parallel'
-  - cartopy ; extra == 'viz'
-  - matplotlib ; extra == 'viz'
-  - nc-time-axis ; extra == 'viz'
-  - seaborn ; extra == 'viz'
-  - pandas-stubs ; extra == 'types'
-  - types-pyyaml ; extra == 'types'
-  - types-pygments ; extra == 'types'
-  - types-colorama ; extra == 'types'
-  - types-decorator ; extra == 'types'
-  - types-defusedxml ; extra == 'types'
-  - types-docutils ; extra == 'types'
-  - types-networkx ; extra == 'types'
-  - types-pexpect ; extra == 'types'
-  - types-psutil ; extra == 'types'
-  - types-pycurl ; extra == 'types'
-  - types-openpyxl ; extra == 'types'
-  - types-python-dateutil ; extra == 'types'
-  - types-pytz ; extra == 'types'
-  - types-setuptools ; extra == 'types'
-  requires_python: '>=3.10'
-- pypi: https://files.pythonhosted.org/packages/00/45/05d49def03f964cd9524c1b7a175aa56bd54577ffd23e97ef60f199f161f/xarray_dataclasses-1.4.0-py3-none-any.whl
-  name: xarray-dataclasses
-  version: 1.4.0
-  sha256: 5e0d29b8109e1d1270a2a4bb35629e0cff5eff850146016dff079e3e8ad71ccf
-  requires_dist:
-  - numpy>=1.15,<1.22 ; python_full_version >= '3.7.1' and python_full_version < '3.8'
-  - numpy>=1.15,<2.0 ; python_full_version >= '3.8' and python_full_version < '3.11'
-  - typing-extensions>=3.10,<5.0
-  - xarray>=0.18,<0.21 ; python_full_version >= '3.7.1' and python_full_version < '3.8'
-  - xarray>=0.18,<2023 ; python_full_version >= '3.8' and python_full_version < '3.11'
-  requires_python: '>=3.7.1,<3.11'
 - pypi: https://files.pythonhosted.org/packages/aa/7b/9adbd82e2b7b8571da23856a890324b42cfbc38ae0ceac2177e5256f7216/xarray_dataclasses-1.9.1-py3-none-any.whl
   name: xarray-dataclasses
   version: 1.9.1

@@ -5,7 +5,7 @@ import harpy as hp
 import loguru
 import spatialdata as sd
 
-from prep_multi_channel_dataset import create_multi_channel_dataset
+from prep_multi_channel_dataset import create_multi_channel_macsima_dataset
 
 logger = loguru.logger
 
@@ -73,7 +73,7 @@ def harpy_flowsom(
         ],
         n_clusters=20,  # 40
         random_state=112,
-        fraction=0.05,
+        fraction=0.1,
         chunks=512,
         client=client,
         model=cluster_model,
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     d = Path(args.dataset).resolve()
     if not d.exists():
         logger.info(f"Dataset {d} does not exist. Creating dataset at {args.dataset}")
-        sdata = create_multi_channel_dataset(
+        sdata = create_multi_channel_macsima_dataset(
             path=args.dataset,
             c_dim=args.c_dim,
             y_dim=args.y_dim,

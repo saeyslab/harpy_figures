@@ -40,7 +40,7 @@ LOG_PREFIX="\${LOG_DIR}/\${METHOD}_\${DIM}_\${WORKERS}"
 
 mkdir -p "\$LOG_DIR"
 
-monitor -d 5 -l \${LOG_PREFIX}monitor.log -- pixi run --frozen -e harpy duct -p \${LOG_PREFIX} \\
+pixi run --frozen -e harpy duct -p \${LOG_PREFIX} \\
   --sample-interval 0.5 \\
   --report-interval 5 \\
   python ../benchmark_segmentation.py \\
