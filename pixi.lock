@@ -964,7 +964,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/87/2f/0c819372fa9f0c07b153124bf58683b8d0ca7bb73ea5ccde9b9ef1745beb/frozenlist-1.6.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/18/67/a7fa2d650602731c90e0a86279841b4586e14228199e8c09165ba4863e29/geojson-3.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/03/71/c99f662d4832c8835453cf3476f95daa28372023bda4aa1fca9e97c24f09/h5py-3.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: git+https://github.com/saeyslab/harpy.git?branch=add_tonsil_dataset#78ee8185952637ac6fbda4b7d5235d8c495ce623
+      - pypi: git+https://github.com/saeyslab/harpy.git?rev=a2da7f5#a2da7f5a394ba7af8b5f730a2e5dc510e730b32c
       - pypi: https://files.pythonhosted.org/packages/93/27/1fb384a841e9661faad1c31cbfa62864f59632e876df5d795234da51c395/huggingface_hub-0.30.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/90/61/ec7edb5233ec2dc3d2129d94211801fb46a1c2b9beec40989707c82271f7/igraph-0.11.8-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: git+https://github.com/berombau/instanseg.git#e4f0794c4f98263e50c21fcae0244b5da9eabe5a
@@ -982,7 +982,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b1/28/92edc05378175de13a3d4986cee7531853634a22b7e5e21a988fa84fde3f/nptyping-2.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a6/a8/908a226632ffabf19caf8c99f1b2898f2f22aac02795a6fe9d018fd6d9dd/numcodecs-0.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/93/c7/5d63372b13bfe9eaff26d540e7a1d2da5f0b4d82a5cbe634b638f1df61a3/ome_types-0.6.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/0d/81/264aca3b548d77554039abd29ed75e4bc57c1d4e2f1ba6a76c1d547ff4d2/ome_types-0.5.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/c8/35ac60b20eccccf84638a872c3b4ebefad46b20f87540ca17a37908b1db6/ome_zarr-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/79/f0/f40ebcf799353fc40417e3afa8b14e7a423e473bd26e285a75090aad609a/ome_zarr_models-0.1.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e3/94/1843518e420fa3ed6919835845df698c7e27e183cb997394e4a670973a65/omegaconf-2.3.0-py3-none-any.whl
@@ -993,8 +993,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/2e/58/91359b72fe0413626be8857122897bb9238fa7b1dd53a3ed299183a17cb6/psygnal-0.12.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/75/e7/c7c1e9e1b6b23ca1db7af3c6826d57d8da883021f751edcc9c82143b127a/pyct-0.5.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b0/1d/407b29780a289868ed696d1616f4aad49d6388e5a77f567dcd2629dcd7b8/pydantic-2.11.3-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7f/65/2edf586ff7b3dfc520977c6529c9b718c86ef8459ece088f1ef1f74bf1d4/pydantic_compat-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0b/60/516484135173aa9e5861d7a0663dce82e4746d2e7f803627d8c25dfa5578/pydantic_core-2.33.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/df/ac/bee195ee49256385fad460ce420aeb42703a648dba487c20b6fd107e42ea/pydantic_extra_types-2.10.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ef/c4/a21a21e34655052fcf5f5bcfa2d7c8795c6f38bc1aa1ee110754a16d5151/pydantic_zarr-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/76/d2/1389339f19e4b763547b127842f3ffb34cca3a778640efca7b354842adce/pyFlowSOM-0.1.16-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/d2/53/d23a97e0a2c690d40b165d1062e2c4ccc796be458a1ce59f6ba030434663/pynndescent-0.5.13-py3-none-any.whl
@@ -1011,7 +1011,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/88/ab/902a46f7b4f3710461e799b241985fba463eff49b59a500e8a6fa267f855/slideio-2.7.1-cp311-cp311-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/b9/c1/16eb09d03eb7096b901e816dc93f53819f83b867c7d5dbb075f837d0120b/spatial_image-1.2.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/14/96/015832d04de478b5ccf089fd259bff58adcff195cf27fec29b2bed307a46/spatialdata-0.4.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/5b/2e/cb0c4ad2d541f20a64ba26c9be7131777ca97347aa38aaba47044780e090/spatialdata_io-0.1.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/67/56/5f0790668cefb8fec0860e5324fccb2ebb94d041cc45b98fa27ed7402fc8/spatialdata_io-0.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/88/c7/4102536de33c19d090ed2b04e90e7452e2e3dc653cf3323208034eaaca27/stdlib_list-0.11.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/79/4b78862a61d1ba96bfcfffeb41b0b5f60da27e8851eb13bb6053bf230aad/tiffslide-2.5.0-py3-none-any.whl
@@ -4220,7 +4220,7 @@ packages:
   purls: []
   size: 1729836
   timestamp: 1744894321480
-- pypi: git+https://github.com/saeyslab/harpy.git?branch=add_tonsil_dataset#78ee8185952637ac6fbda4b7d5235d8c495ce623
+- pypi: git+https://github.com/saeyslab/harpy.git?rev=a2da7f5#a2da7f5a394ba7af8b5f730a2e5dc510e730b32c
   name: harpy-analysis
   version: 0.1.0
   requires_dist:
@@ -7665,6 +7665,54 @@ packages:
   purls: []
   size: 106742
   timestamp: 1743700382939
+- pypi: https://files.pythonhosted.org/packages/0d/81/264aca3b548d77554039abd29ed75e4bc57c1d4e2f1ba6a76c1d547ff4d2/ome_types-0.5.3-py3-none-any.whl
+  name: ome-types
+  version: 0.5.3
+  sha256: 081d8e42bdacbbaf3de65dff3f4d73f809822c8ac6b422fd46c34fdd28a76ea8
+  requires_dist:
+  - pydantic>=1.10.16,!=2.0,!=2.1,!=2.2,!=2.3
+  - pydantic-compat>=0.1.0
+  - xsdata>=23.6,<24.4
+  - ruff==0.3.0 ; extra == 'build'
+  - xsdata[cli]==24.2.1 ; extra == 'build'
+  - lxml ; extra == 'dev'
+  - mkdocs-material ; extra == 'dev'
+  - mkdocstrings-python ; extra == 'dev'
+  - mypy ; extra == 'dev'
+  - numpy ; extra == 'dev'
+  - pdbpp ; sys_platform != 'win32' and extra == 'dev'
+  - pint ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - pytest ; extra == 'dev'
+  - pytest-codspeed ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - pytest-mypy-plugins ; extra == 'dev'
+  - ruff ; extra == 'dev'
+  - ruff==0.3.0 ; extra == 'dev'
+  - types-lxml ; python_full_version >= '3.8' and extra == 'dev'
+  - xmlschema<2.5 ; extra == 'dev'
+  - xsdata[cli] ; extra == 'dev'
+  - xsdata[cli]==24.2.1 ; extra == 'dev'
+  - mkdocs-material ; extra == 'docs'
+  - mkdocstrings-python ; extra == 'docs'
+  - lxml>=4.8.0 ; extra == 'lxml'
+  - pint>=0.15 ; extra == 'pint'
+  - lxml ; extra == 'test'
+  - mypy ; extra == 'test'
+  - numpy ; extra == 'test'
+  - pdbpp ; sys_platform != 'win32' and extra == 'test'
+  - pint ; extra == 'test'
+  - pytest ; extra == 'test'
+  - pytest-codspeed ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - pytest-mypy-plugins ; extra == 'test'
+  - ruff ; extra == 'test'
+  - types-lxml ; python_full_version >= '3.8' and extra == 'test'
+  - xmlschema<2.5 ; extra == 'test'
+  - xsdata[cli] ; extra == 'test'
+  - pytest-qt ; extra == 'test-qt'
+  - qtpy ; extra == 'test-qt'
+  requires_python: '>=3.8'
 - pypi: https://files.pythonhosted.org/packages/93/c7/5d63372b13bfe9eaff26d540e7a1d2da5f0b4d82a5cbe634b638f1df61a3/ome_types-0.6.1-py3-none-any.whl
   name: ome-types
   version: 0.6.1
@@ -8537,6 +8585,25 @@ packages:
   - email-validator>=2.0.0 ; extra == 'email'
   - tzdata ; python_full_version >= '3.9' and sys_platform == 'win32' and extra == 'timezone'
   requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/7f/65/2edf586ff7b3dfc520977c6529c9b718c86ef8459ece088f1ef1f74bf1d4/pydantic_compat-0.1.2-py3-none-any.whl
+  name: pydantic-compat
+  version: 0.1.2
+  sha256: 37a4df48565a35aedc947f0fde5edbdff270a30836d995923287292bb59d5677
+  requires_dist:
+  - importlib-metadata ; python_full_version < '3.8'
+  - pydantic
+  - black ; extra == 'dev'
+  - ipython ; extra == 'dev'
+  - mypy ; extra == 'dev'
+  - pdbpp ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - pytest ; extra == 'dev'
+  - pytest-cov ; extra == 'dev'
+  - rich ; extra == 'dev'
+  - ruff ; extra == 'dev'
+  - pytest-cov ; extra == 'test'
+  - pytest>=6.0 ; extra == 'test'
+  requires_python: '>=3.7'
 - pypi: https://files.pythonhosted.org/packages/0b/60/516484135173aa9e5861d7a0663dce82e4746d2e7f803627d8c25dfa5578/pydantic_core-2.33.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
   name: pydantic-core
   version: 2.33.1
@@ -9775,17 +9842,19 @@ packages:
   - torch ; extra == 'test'
   - torch ; extra == 'torch'
   requires_python: '>=3.10,<3.13'
-- pypi: https://files.pythonhosted.org/packages/5b/2e/cb0c4ad2d541f20a64ba26c9be7131777ca97347aa38aaba47044780e090/spatialdata_io-0.1.6-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/5e/49/3ab2dfc69f9fd70d62f5f9b3039dab4a27506c605a9931e70db22b3ba5f5/spatialdata_io-0.1.7-py3-none-any.whl
   name: spatialdata-io
-  version: 0.1.6
-  sha256: fd9caeb41d8b350ea2f76f5019beab4eb9f00a8276d4b1ac338087aef7ffc226
+  version: 0.1.7
+  sha256: 37e4d86f55d1bd602415504b0d11197b1ad9df91375b4ebd5b523a1b1153875b
   requires_dist:
   - anndata
+  - click
   - dask-image
   - h5py
   - imagecodecs
   - joblib
   - numpy
+  - ome-types
   - pyarrow
   - readfcs
   - scanpy
@@ -9798,6 +9867,7 @@ packages:
   - myst-nb ; extra == 'doc'
   - sphinx-autodoc-typehints ; extra == 'doc'
   - sphinx-book-theme>=1.0.0 ; extra == 'doc'
+  - sphinx-click ; extra == 'doc'
   - sphinx-copybutton ; extra == 'doc'
   - sphinx-design ; extra == 'doc'
   - sphinx>=4.5 ; extra == 'doc'
@@ -9806,10 +9876,10 @@ packages:
   - pytest ; extra == 'test'
   - pytest-cov ; extra == 'test'
   requires_python: '>=3.10'
-- pypi: https://files.pythonhosted.org/packages/5e/49/3ab2dfc69f9fd70d62f5f9b3039dab4a27506c605a9931e70db22b3ba5f5/spatialdata_io-0.1.7-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/67/56/5f0790668cefb8fec0860e5324fccb2ebb94d041cc45b98fa27ed7402fc8/spatialdata_io-0.2.0-py3-none-any.whl
   name: spatialdata-io
-  version: 0.1.7
-  sha256: 37e4d86f55d1bd602415504b0d11197b1ad9df91375b4ebd5b523a1b1153875b
+  version: 0.2.0
+  sha256: 76ab752045b4144b78c38462d85eab34b9c9d53d104c5e624078a191f1ef2201
   requires_dist:
   - anndata
   - click
