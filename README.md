@@ -1,7 +1,9 @@
 # Figures for the Harpy manuscript
 
+This repository contains the code to reproduce the figures in the Harpy manuscript and uses the [Harpy package](https://github.com/saeyslab/harpy).
+
 ## Install
-This benchmark is Linux only. Install [Pixi](https://pixi.sh/latest/).
+This code is Linux only. Install [Pixi](https://pixi.sh/latest/).
 
 ```
 pixi i -e all
@@ -14,39 +16,30 @@ pixi shell -e harpy
 
 ## Usage
 
-### Prep datasets
+### Setup datasets
+
+Each script will also create a dataset based on code in the harpy package if not present. For the aggregation task, you can use the dataset created by the segmentation task by moving it to the location `$ORIG_DATASET` as seen in script `submit_aggregation_harpy_jobs.sh`. Creating the largest datasets can take a while, can take several Gigabytes count for the Slurm job limit. Each dataset is removed after a successful run.
+
+### Run the tasks
+
+The following commands will execute for a certain comparison task several jobs on a Slurm cluster like e.g. [doduo on HPC-UGent](https://docs.hpc.ugent.be/Linux/infrastructure/). To have multiple measurements per task, you can run the same command e.g. 3 times. The results will be saved in the `hpc_scripts/.duct` folder.
+
+Make sure to update the `$VERSION` variable in the scripts for each run.
+
 ```bash
-pixi run -e harpy --frozen python prep_multi_channel_dataset.py
+ml load cluster/doduo
+cd hpc_scripts
+bash submit_segment_jobs.sh # submit the segmentation jobs
+bash submit_aggregation_harpy_jobs.sh # submit the aggregation jobs
+bash submit_flowsom_harpy_jobs.sh # submit the flowsom jobs
 ```
 
-### Run time benchmark
-A way to run the benchmark with Hyperfine, but this has no support for memory benchmarking.
+### Create the figures with notebooks
 
-```bash
-pixi run hyperfine -M 3 -L dataset dataset_0,dataset_1 -n dataset_0 -n dataset_1 -w 1 'pixi run -e all --frozen python benchmark.py data/{dataset}.zarr'
-```
+The figures are created with the Jupyter notebooks in the `figures` folder. You can run them in a Jupyter notebook in the Pixi environment.
 
-### Run test time and memory benchmark
-```bash
-rm -r .duct # remove previous logs
-pixi run test_benchmark # create duct logs by calling duct on each benchmark sample
-pixi run python postprocess.py # creates a summary.csv from the duct logs
-```
+- `notebooks/figures_segmentation.ipynb`
+- `notebooks/figures_agg.ipynb`
+- `notebooks/figures_cluster.ipynb`
 
-Run the `figures.ipynb` notebook with the output .csv in `.duct/logs` to create figures.
-
-### Run real time and memory benchmark
-```bash
-rm -r .duct # remove previous logs
-pixi run benchmark # create duct logs by calling duct on each benchmark sample
-pixi run python postprocess.py # creates a summary.csv from the duct logs
-```
-
-Run the `figures.ipynb` notebook with the output .csv in `.duct/logs` to create figures.
-
-# TODO
-
-- [ ] create one benchmark output figure with chosen methods, parameters, duct logs in a folder via `-p` and figures.
-- [ ] add more datasets
-- [ ] add more methods
-- [ ] add support for N repetitions and error bars in figures
+They use code from the `helpers.py` script to postprocess the output in `hpc_scripts/.duct`. Make sure to update the paths in the notebooks to point to the correct version location of the output files. 
