@@ -2,16 +2,16 @@
 # Define your parameter arrays:
 DIM_VALUES=(500 1000 2000 5000 10000 20000)
 # DIM_VALUES=(500)
-RAM_VALUES=(10 10 10 10 50 50)  # Memory in GB
+RAM_VALUES=(100 100 100 100 100 100)  # Memory in GB
 # RAM_VALUES=(10)
-TIME_VALUES=(01 01 01 01 02 02)
+TIME_VALUES=(04 04 04 04 04 04)
 # TIME_VALUES=(01)
 
 WORKERS_VALUES=(1 2 4 8)
 # WORKERS_VALUES=(1)
 METHOD_VALUES=(harpy xr_spatial spatialdata sopa squidpy)
 ENV_VALUES=(harpy harpy harpy sopa squidpy)
-VERSION=008
+VERSION=011
 
 for i in "${!DIM_VALUES[@]}"; do
   DIM=${DIM_VALUES[$i]}
@@ -65,6 +65,8 @@ pixi run --frozen -e "\$ENV" duct -p \${LOG_PREFIX} \\
   --threads "\$THREADS" \\
   --workers 1 \\
   --method "\$METHOD"
+
+rm -r "\$DATASET"
 EOF
   done
 done

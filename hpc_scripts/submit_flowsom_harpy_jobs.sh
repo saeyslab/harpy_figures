@@ -4,11 +4,12 @@ CHUNKSIZE=2048
 DIM_VALUES=(500 1000 2000 5000 10000 20000 30000)
 # DIM_VALUES=(500)
 RAM_VALUES=100  # Memory in GB
-TIME_VALUES=3
+TIME_VALUES=4
 
 # for flowsom clustering there are some advantages to run with threads instead of workers, due to sampling.
 # WORKERS_VALUES=(1 2)
 WORKERS_VALUES=(1 2 4 8)
+VERSION=020
 
 for i in "${!DIM_VALUES[@]}"; do
   DIM=${DIM_VALUES[$i]}
@@ -27,12 +28,12 @@ for i in "${!DIM_VALUES[@]}"; do
 #SBATCH --cpus-per-task=${WORKERS}
 #SBATCH --time=${TIME}:00:00
 #SBATCH --mem=${MEM}G
-#SBATCH --job-name=flowsom_${DIM}_${WORKERS}_${METHOD}
-#SBATCH --output=flowsom_${DIM}_${WORKERS}_${METHOD}.out
-#SBATCH --error=flowsom_${DIM}_${WORKERS}_${METHOD}.err
+#SBATCH --job-name=flowsom_${VERSION}_${DIM}_${WORKERS}_${METHOD}
+#SBATCH --output=flowsom_${VERSION}_${DIM}_${WORKERS}_${METHOD}.out
+#SBATCH --error=flowsom_${VERSION}_${DIM}_${WORKERS}_${METHOD}.err
 
 # Set parameters
-VERSION=016
+VERSION=${VERSION}
 DIM=${DIM}
 C_DIM=${C_DIM}
 RAM_VALUES_PER_WORKER=${RAM_VALUES_PER_WORKER}
@@ -71,6 +72,8 @@ pixi run --frozen -e harpy duct -p \${LOG_PREFIX} \\
   --chunksize "\$CHUNKSIZE" \\
   --img_layer "\$IMG_LAYER" \\
   --memory_limit "\$RAM_VALUES_PER_WORKER"
+
+rm -r "\$DATASET"
 EOF
   done
 done
