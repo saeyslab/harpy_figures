@@ -6,7 +6,7 @@ platforms = [ "linux-64"]
 version = "0.1.0"
 
 [dependencies]
-python = "<3.12"
+python = "<3.13"
 numpy = ">=1.26.4,<2"
 matplotlib = ">=3,<4"
 loguru = ">=0.7.2,<0.8"
@@ -14,19 +14,16 @@ memray = ">=1.15.0,<2"
 hyperfine = ">=1.19.0,<2"
 ipykernel = ">=6.29.5,<7"
 seaborn = ">=0.13.2,<0.14"
-# segmentation models
-cellpose = "==3.0.11"
 
 [pypi-dependencies]
 con-duct = { version = ">=0.10.1, <0.11", extras = ["all"] }
 # needed for xr_spatial and flowsom
-# segmentation models
-instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
 xarray-spatial = "<0.4.0"
 spatialdata = "==0.4.0"
 numba = ">=0.55.0"
-# instanseg-torch = "==0.0.9"
-# tifffile = ">=2023.12.9,<2025.2.18"
+# segmentation models
+instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
+cellpose = "==3.0.11"
 
 [tasks]
 prep_datasets = "python prep_datasets.py"
@@ -78,10 +75,10 @@ anndata = ">=0.9.1,<=0.10.8"
 harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "a2da7f5"}
 flowsom = { git = "https://github.com/saeyslab/FlowSOM_Python.git", rev = "d8cb6a5" }
 pyflowsom = "==0.1.16"
-spatialdata = "==0.4.0"
 numba = ">=0.55.0"
 spatialdata_io = "==0.2.0"
 ome_types = "<0.6.0"
+spatialdata-plot = ">=0.2.10, <0.3"
 
 # instanseg-torch = "==0.0.8"
 
@@ -93,4 +90,3 @@ sopa = "==2.0.1"
 [feature.squidpy.pypi-dependencies]
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 squidpy = "==1.6.5"
-spatialdata = "==0.4.0"
