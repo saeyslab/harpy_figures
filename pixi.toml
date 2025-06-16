@@ -34,6 +34,7 @@ test_benchmark = "python run_duct_test_benchmark.py"
 harpy = ["harpy"]
 sopa = ["sopa"]
 squidpy = ["squidpy"]
+notebook = ['notebook']
 
 [feature.squidpy.dependencies]
 scipy = ">=1.14.1,<2"
@@ -72,13 +73,14 @@ fsspec = "<=2023.6"
 anndata = ">=0.9.1,<=0.10.8"
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 # instanseg-torch = { git = "https://github.com/berombau/instanseg.git"}
-harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "a2da7f5"}
+harpy-analysis = { git = "https://github.com/saeyslab/harpy.git", rev = "d28e245"}
 flowsom = { git = "https://github.com/saeyslab/FlowSOM_Python.git", rev = "d8cb6a5" }
 pyflowsom = "==0.1.16"
 numba = ">=0.55.0"
 spatialdata_io = "==0.2.0"
 ome_types = "<0.6.0"
 spatialdata-plot = ">=0.2.10, <0.3"
+supervenn = ">=0.5.0, <0.6"
 
 # instanseg-torch = "==0.0.8"
 
@@ -90,3 +92,12 @@ sopa = "==2.0.1"
 [feature.squidpy.pypi-dependencies]
 # TODO: fix problem with visium_hd reader in 0.1.7 and spatialdata 0.2.6
 squidpy = "==1.6.5"
+
+[feature.notebook.pypi-dependencies]
+ipykernel = ">=6.29.5,<7"
+
+[feature.notebook.dependencies]
+seaborn = ">=0.13.2,<0.14"
+pandas = ">=2.2.3,<3"
+numpy = ">=1.26.4,<2"
+# seaborn = ">=0.13.2,<0.14"

@@ -56,6 +56,7 @@ def harpy_segment(
         chunks=(chunksize, chunksize),
         depth=50,
         model=hp.im.instanseg_callable,
+        pixel_size=0.17,
         # parameters passed to hp.im.instanseg_callable
         output="all_outputs",
         device="cpu",
@@ -113,6 +114,8 @@ def instanseg_segment(
     sdata: sd.SpatialData,
     chunksize: int,
     img_layer: str,
+    workers: int | None = None,
+    threads: int | None = None,
 ):
     import torch
     from instanseg import InstanSeg
@@ -123,6 +126,13 @@ def instanseg_segment(
         os.environ.get("INSTANSEG_BIOIMAGEIO_PATH"),
         "fluorescence_nuclei_and_cells/0.1.0/instanseg.pt",
     )
+    batch_size = 1
+    if workers is not None and threads is not None:
+        batch_size = max(workers, threads)
+    elif workers is not None:
+        batch_size = workers
+    elif threads is not None:
+        batch_size = threads
 
     instanseg_model = torch.load(path_model)
     instanseg_model = InstanSeg(model_type=instanseg_model, device="cpu")
@@ -132,10 +142,11 @@ def instanseg_segment(
     labeled_output, _ = instanseg_model.eval_medium_image(
         image_array,
         tile_size=chunksize,
-        batch_size=1,
+        batch_size=batch_size,
         resolve_cell_and_nucleus=True,
         cleanup_fragments=True,
         target="all_outputs",
+        pixel_size=0.17,
     )  # "all_outputs", "nuclei", or "cells".
 
     nuclei, cells = labeled_output.squeeze(0).numpy().astype(np.uint32)
@@ -176,6 +187,7 @@ def sopa_segment(
         channels=sdata[img_layer].c.data.tolist(),
         image_key=img_layer,
         key_added=output_layer,
+        # does not support model parameters, so we rely on the pixel_size default of 0.17 in instanseg_callable_sopa
     )
 
     nr_of_shapes_found = len(sdata[output_layer])
@@ -222,6 +234,7 @@ def squidpy_segment(
         lazy=True,
         channel=ic[img_layer].channels.data.tolist(),
         depth=(50, 50, 0, 0),
+        pixel_size=0.17,
     )
 
     sdata["labels_cells_instanseg"] = sd.models.Labels2DModel.parse(
@@ -236,7 +249,7 @@ def instanseg_callable_sopa(
     img: NDArray,
     device: str | None = "cpu",
     dtype: type = np.uint32,
-    pixel_size: float = 0.5,
+    pixel_size: float = 0.17,
     **kwargs,  # kwargs passed to .eval_small_image
 ) -> NDArray:
     # input is c,y,x
@@ -274,7 +287,7 @@ def instanseg_callable_squidpy(
     img: NDArray,
     device: str | None = "cpu",
     dtype: type = np.uint32,
-    pixel_size: float = 0.5,
+    pixel_size: float = 0.17,
     **kwargs,  # kwargs passed to .eval_small_image
 ) -> NDArray:
     # input is y,x,c. z is ignored by squidpy
@@ -417,6 +430,8 @@ if __name__ == "__main__":
                 sdata,
                 chunksize=args.chunksize,
                 img_layer=args.img_layer,
+                workers=args.workers,
+                threads=args.threads,
             )
         if args.method == "sopa":
             sopa_segment(

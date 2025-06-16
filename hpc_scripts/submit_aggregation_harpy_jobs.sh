@@ -11,7 +11,7 @@ WORKERS_VALUES=(1 2 4 8)
 # WORKERS_VALUES=(1)
 METHOD_VALUES=(harpy xr_spatial spatialdata sopa squidpy)
 ENV_VALUES=(harpy harpy harpy sopa squidpy)
-VERSION=011
+VERSION=014
 
 for i in "${!DIM_VALUES[@]}"; do
   DIM=${DIM_VALUES[$i]}
