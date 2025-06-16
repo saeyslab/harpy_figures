@@ -38,6 +38,8 @@ bash submit_flowsom_harpy_jobs.sh # submit the flowsom jobs
 
 The figures are created with the Jupyter notebooks in the `figures` folder. You can run them in a Jupyter notebook in the Pixi environment.
 
+- `notebooks/process_tonsil.ipynb`
+    - Figure 2 (A, D)
 - `notebooks/figures_segmentation.ipynb`
     - Figure 3 (I)
 - `notebooks/figures_agg.ipynb`
@@ -47,4 +49,6 @@ The figures are created with the Jupyter notebooks in the `figures` folder. You 
 - `notebooks/figures_cluster_quality.ipynb`
     - Figure 5 (C, D)
 
-They use code from the `helpers.py` script to postprocess the output in `hpc_scripts/.duct`. Make sure to update the paths in the notebooks to point to the correct version location of the output files. 
+They use code from the `helpers.py` script to postprocess the output in `hpc_scripts/.duct`. Make sure to update the paths in the notebooks to point to the correct version location of the output files.
+
+See the [Harpy documentation](https://harpy.readthedocs.io/en/latest/) for more information on specific package functionality and plots.
