@@ -43,7 +43,7 @@ The figures are created with the Jupyter notebooks in the `figures` folder. You 
 - `notebooks/figures_segmentation.ipynb`
     - Figure 3 (I)
 - `notebooks/figures_segmentation_quality.ipynb`
-    - Figure 3 (A, B, C, D, E, F)
+    - Figure 3 (A-H)
 - `notebooks/figures_agg.ipynb`
     - Figure 4 (A, B)
 - `notebooks/figures_cluster.ipynb`
