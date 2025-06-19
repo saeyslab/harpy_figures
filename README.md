@@ -45,11 +45,11 @@ The figures are created with the Jupyter notebooks in the `figures` folder. You 
 - `notebooks/figures_segmentation_quality.ipynb`
     - Figure 3 (A-H)
 - `notebooks/figures_agg.ipynb`
-    - Figure 4 (A, B)
+    - Supplementary S4 (A, B)
 - `notebooks/figures_cluster.ipynb`
-    - Figure 5 (A, B)
+    - Supplementary S5 (A, B), Supplementary S5
 - `notebooks/figures_cluster_quality.ipynb`
-    - Figure 5 (C, D)
+    - Supplementary S3, Supplementary S5 (C, D)
 
 They use code from the `helpers.py` script to postprocess the output in `hpc_scripts/.duct`. Make sure to update the paths in the notebooks to point to the correct version location of the output files.
 
